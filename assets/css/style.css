@@ -448,6 +448,53 @@ footer.site-footer {
   color: rgba(247,243,234,0.5);
 }
 
+/* ---------- Équipe ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.team-card {
+  background: var(--ivory);
+  border: 1px solid rgba(15,61,46,0.12);
+  padding: 24px 22px;
+}
+.team-card h4 { font-size: 1rem; margin-bottom: 6px; }
+.team-card .role { font-size: 0.84rem; color: var(--bordeaux); font-weight: 600; margin-bottom: 8px; display: block; }
+.team-card p { font-size: 0.85rem; color: var(--ink-soft); }
+
+.name-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+.name-cloud span {
+  padding: 8px 16px;
+  border: 1px solid rgba(15,61,46,0.15);
+  background: var(--ivory-dim);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.notice-box {
+  background: rgba(201,164,92,0.12);
+  border-left: 3px solid var(--gold);
+  padding: 18px 24px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+}
+
+/* ---------- Partenaires ---------- */
+.partner-tier { margin-bottom: 48px; }
+.partner-tier h3 { font-size: 1.1rem; margin-bottom: 20px; }
+.partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.partner-card {
+  background: var(--ivory);
+  border: 1px solid rgba(15,61,46,0.12);
+  padding: 22px 20px;
+}
+.partner-card h4 { font-size: 0.98rem; margin-bottom: 6px; }
+.partner-card .role { font-size: 0.82rem; color: var(--bordeaux); font-weight: 600; display: block; margin-bottom: 6px; }
+.partner-card p { font-size: 0.84rem; color: var(--ink-soft); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .about-grid { grid-template-columns: 1fr; }
@@ -456,6 +503,8 @@ footer.site-footer {
   .atouts-grid { grid-template-columns: 1fr; }
   .parcours-steps { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .partner-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -479,6 +528,8 @@ footer.site-footer {
   .poles-list { grid-template-columns: 1fr; }
   .parcours-steps { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
