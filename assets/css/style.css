@@ -293,7 +293,7 @@ section:has(.section-dark) { padding: 0; }
   box-shadow: 0 2px 24px rgba(0,0,0,0.3);
 }
 .site-header--dark .logo { color: #fff; }
-.site-header--dark .logo span { background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.site-header--dark .logo-text span { background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .site-header--dark .nav-links a { color: rgba(255,255,255,0.75); }
 .site-header--dark .nav-links a:hover { color: var(--gold-bright); }
 .site-header--dark .nav-links a.active { color: #fff; }
@@ -310,6 +310,9 @@ section:has(.section-dark) { padding: 0; }
   height: 72px;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.15rem;
@@ -317,7 +320,16 @@ section:has(.section-dark) { padding: 0; }
   letter-spacing: -0.01em;
   flex-shrink: 0;
 }
-.logo span {
+.logo-mark {
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(12,15,13,0.15));
+  transition: transform var(--duration) var(--ease);
+}
+.logo:hover .logo-mark { transform: rotate(-4deg) scale(1.04); }
+.logo-text { line-height: 1.15; }
+.logo-text span {
   background: var(--grad-coral);
   -webkit-background-clip: text;
   background-clip: text;
@@ -529,6 +541,17 @@ section:has(.section-dark) { padding: 0; }
   transform: translateY(-50%);
   background-image: radial-gradient(circle, currentColor 1.5px, transparent 1.5px);
   background-size: 24px 24px;
+}
+.hero-watermark {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  max-width: 46vw;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
 }
 .hero-pattern--grid {
   width: 400px; height: 400px;
@@ -988,10 +1011,17 @@ section:has(.section-dark) { padding: 0; }
   gap: var(--space-2xl);
   padding-bottom: var(--space-3xl);
 }
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-md);
+}
+.footer-logo-mark { height: 50px; width: auto; flex-shrink: 0; }
 .footer-brand h4 {
   color: #fff;
   font-size: 1.1rem;
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 .footer-brand p {
   font-size: 0.88rem;
@@ -1565,7 +1595,23 @@ section:has(.section-dark) { padding: 0; }
   font-size: 0.82rem;
   color: rgba(255,255,255,0.82);
 }
+.accred-badge::before {
+  content: '';
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .accred-badge strong { color: var(--gold-bright); }
+.accred-badge--light {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+.accred-badge--light strong { color: var(--primary-dark); }
 
 /* ===================== 404 PAGE ===================== */
 .error-page {
@@ -1651,8 +1697,6 @@ section:has(.section-dark) { padding: 0; }
   }
   .nav-links a::after { display: none; }
   .nav-links a.active { color: var(--primary); font-weight: 700; }
-  .nav-cta { margin: var(--space-lg) 0 0; }
-  .nav-cta .btn { width: 100%; justify-content: center; }
   .burger { display: flex; z-index: 200; }
 
   /* Hero */
@@ -1660,6 +1704,7 @@ section:has(.section-dark) { padding: 0; }
   .hero--tall { min-height: auto; padding: 100px 0 60px; }
   .hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
   .hero .lead { font-size: 1rem; }
+  .hero-watermark { display: none; }
 
   /* Grids */
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -1689,6 +1734,11 @@ section:has(.section-dark) { padding: 0; }
   .stats-row { gap: var(--space-sm); }
   .stat-item { padding: var(--space-md); }
   .btn-lg { padding: 16px 28px; font-size: 0.9rem; }
+
+  /* Compact header: crest only, no wordmark, so the CTA + burger keep breathing room */
+  .logo-text { display: none; }
+  .logo-mark { height: 38px; }
+  .nav-cta .btn { padding: 9px 16px; font-size: 0.76rem; }
 }
 
 /* — Focus-visible — */

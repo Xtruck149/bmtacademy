@@ -1,0 +1,15 @@
+{
+  "name": "BMT Green Academy",
+  "short_name": "BMT Green Academy",
+  "description": "École Internationale des Arts Thérapeutiques, du Leadership Social et des Métiers Verts.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FAF6EE",
+  "theme_color": "#0E4D38",
+  "lang": "fr",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
