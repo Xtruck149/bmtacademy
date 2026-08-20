@@ -19,7 +19,6 @@
 </head>
 <body>
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
 <header class="site-header">
   <nav class="nav">
     <a href="../index.html" class="logo">BMT <span>Green</span> Academy</a>
@@ -31,15 +30,19 @@
       <li><a href="../partenaires.html">Partenaires</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-cta"><a href="https://wa.me/2250101736812?text=Bonjour%20%C3%A9quipe%20BMT%20Green%20Academy%2C%20je%20m%27int%C3%A9resse%20aux%20formations." class="btn btn-primary btn-sm">Nous contacter</a></div>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<section class="hero" id="main-content" style="padding:100px 0 80px;">
+<section id="main-content" class="hero hero--coral">
   <div class="wrap hero-inner">
-    <span class="eyebrow" style="color:#C9A45C">Univers créatif</span>
+    <nav class="breadcrumbs">
+      <a href="../index.html">Accueil</a>
+      <span class="sep">/</span>
+      <span class="current">Thérapixel Afrika</span>
+    </nav>
+    <span class="eyebrow eyebrow--light">Univers créatif</span>
     <h1>Thérapixel Afrika<em>®</em></h1>
     <p class="lead">L'art numérique thérapeutique au service de la guérison, de la mémoire et de l'expression africaine contemporaine.</p>
     <div class="hero-actions">
@@ -49,23 +52,56 @@
   </div>
 </section>
 
-<section class="about">
-  <div class="wrap about-grid">
-    <div class="about-text">
-      <span class="eyebrow">Notre démarche</span>
-      <h2>L'art comme outil de transformation</h2>
-      <p>Thérapixel Afrika® est l'univers créatif de BMT Green Academy dédié à l'art numérique thérapeutique. Il explore comment l'image, la couleur et la composition digitale peuvent devenir des outils de guérison, d'expression et de reconnexion à soi.</p>
-      <p>Cette démarche s'inscrit dans le Pôle IV — Éducation, créativité et art-thérapie, et nourrit la dimension artistique et symbolique de l'ensemble des formations de l'Académie.</p>
-    </div>
-    <div class="founder-card">
-      <span class="eyebrow">À découvrir aussi</span>
-      <h3>TIMI Design Afrika</h3>
-      <p>La collection Les Dignitaires, première ligne de vêtements vibratoires et thérapeutiques de Côte d'Ivoire, dirigée par Kouassi-Lenoir-Lobognon Eva.</p>
+<section class="bg-surface">
+  <div class="wrap">
+    <div class="split-layout">
+      <div>
+        <div class="section-header">
+          <span class="eyebrow">Notre démarche</span>
+          <h2>L'art comme outil de transformation</h2>
+        </div>
+        <p class="text-lg">Thérapixel Afrika® est l'univers créatif de BMT Green Academy dédié à l'art numérique thérapeutique. Il explore comment l'image, la couleur et la composition digitale peuvent devenir des outils de guérison, d'expression et de reconnexion à soi.</p>
+        <p style="margin-top:var(--space-md);">Cette démarche s'inscrit dans le Pôle IV — Éducation, créativité et art-thérapie, et nourrit la dimension artistique et symbolique de l'ensemble des formations de l'Académie.</p>
+      </div>
+      <div class="founder-card">
+        <span class="eyebrow">À découvrir aussi</span>
+        <h3>TIMI Design Afrika</h3>
+        <p>La collection Les Dignitaires, première ligne de vêtements vibratoires et thérapeutiques de Côte d'Ivoire, dirigée par Kouassi-Lenoir-Lobognon Eva.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
+<section class="bg-cream">
+  <div class="wrap">
+    <div class="section-header centered">
+      <span class="eyebrow">Ce que nous explorons</span>
+      <h2>Les dimensions de Thérapixel Afrika</h2>
+    </div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card card--bordered">
+        <div class="card-body">
+          <h4>Art numérique thérapeutique</h4>
+          <p>Création d'œuvres digitales comme support de guérison émotionnelle et de réparation intérieure.</p>
+        </div>
+      </div>
+      <div class="card card--bordered">
+        <div class="card-body">
+          <h4>Mémoire et identité</h4>
+          <p>Reconnexion aux symboles, aux codes visuels africains et à la mémoire culturelle à travers l'image.</p>
+        </div>
+      </div>
+      <div class="card card--bordered">
+        <div class="card-body">
+          <h4>Expression contemporaine</h4>
+          <p>Dialogue entre tradition africaine et technologie moderne pour une expression artistique nouvelle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band cta-band--dark">
   <div class="wrap">
     <h2>Une question sur Thérapixel Afrika ?</h2>
     <p>Écrivez-nous pour en savoir plus sur cet univers créatif.</p>
@@ -73,32 +109,38 @@
   </div>
 </section>
 
+<div class="nav-mobile-overlay"></div>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <h4>BMT Green Academy</h4>
         <p>École Internationale des Arts Thérapeutiques, du Leadership Social et des Métiers Verts. Accessible dans toute l'Afrique et la diaspora.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/2250101736812" aria-label="WhatsApp">WhatsApp</a>
+          <a href="mailto:Bmtgreenacademy@gmail.com" aria-label="Email">Email</a>
+        </div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="../formations/index.html">Informations formations</a>
-        <a href="../contact.html">Accompagnement personnalisé</a>
-        <a href="../formations/parcours-etudiant.html">Modalités d'inscription</a>
-        <a href="../equipe.html">Rejoindre la communauté</a>
-      </div>
-      <div class="footer-col">
-        <h4>Découvrir</h4>
-        <a href="../a-propos.html">Qui sommes-nous</a>
+        <h5>Formations</h5>
+        <a href="../formations/index.html">Toutes les formations</a>
+        <a href="../formations/parcours-etudiant.html">Parcours étudiant</a>
         <a href="../inclusive/sport-etudes.html">Sport-Études</a>
         <a href="therapixel-afrika.html">Thérapixel Afrika</a>
-        <a href="../partenaires.html">Partenaires</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h5>L'Académie</h5>
+        <a href="../a-propos.html">Qui sommes-nous</a>
+        <a href="../equipe.html">Notre équipe</a>
+        <a href="../partenaires.html">Partenaires</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
         <p>Abidjan, Côte d'Ivoire</p>
         <a href="mailto:Bmtgreenacademy@gmail.com">Bmtgreenacademy@gmail.com</a>
-        <a href="tel:+2250101736812">0101736812 / 0777776200</a>
+        <a href="tel:+2250101736812">01 01 73 68 12</a>
+        <a href="tel:+2250777776200">07 77 77 62 00</a>
       </div>
     </div>
     <div class="footer-bottom">

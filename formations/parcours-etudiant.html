@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <header class="site-header">
@@ -21,51 +22,64 @@
     <a href="../index.html" class="logo">BMT <span>Green</span> Academy</a>
     <ul class="nav-links">
       <li><a href="../a-propos.html">Qui sommes-nous</a></li>
-      <li><a href="index.html">Formations</a></li>
+      <li><a href="index.html" class="active">Formations</a></li>
       <li><a href="../inclusive/sport-etudes.html">Sport-Études</a></li>
       <li><a href="../equipe.html">Équipe</a></li>
       <li><a href="../partenaires.html">Partenaires</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-cta"><a href="https://wa.me/2250101736812?text=Bonjour%20%C3%A9quipe%20BMT%20Green%20Academy%2C%20je%20m%27int%C3%A9resse%20aux%20formations." class="btn btn-primary btn-sm">Nous contacter</a></div>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<section id="main-content" class="hero" style="padding:100px 0 80px;">
+<div class="wrap">
+  <div class="breadcrumbs">
+    <a href="../index.html">Accueil</a>
+    <span class="sep">/</span>
+    <a href="index.html">Formations</a>
+    <span class="sep">/</span>
+    <span class="current">Parcours étudiant</span>
+  </div>
+</div>
+
+<section id="main-content" class="hero hero--default hero--short">
   <div class="wrap hero-inner">
-    <span class="eyebrow" style="color:#C9A45C">Modalités d'inscription</span>
+    <span class="eyebrow eyebrow--light">Modalités d'inscription</span>
     <h1>Le parcours étudiant <em>pas à pas</em></h1>
     <p class="lead">Un dispositif complet, du kit pédagogique à l'intégration dans le réseau BMT.</p>
   </div>
 </section>
 
-<section class="parcours">
+<section class="section-compact">
   <div class="wrap">
-    <div class="parcours-steps">
-      <div class="parcours-step">
-        <span class="step-n">01</span>
-        <h4>Formation en ligne</h4>
-        <p>E-learning asynchrone, kit pédagogique complet dès l'inscription.</p>
+    <div class="section-header centered">
+      <span class="eyebrow">Votre parcours</span>
+      <h2>4 étapes vers votre certification</h2>
+    </div>
+    <div class="timeline" style="max-width:680px;margin:0 auto;">
+      <div class="timeline-item">
+        <div class="timeline-date">Étape 01</div>
+        <div class="timeline-title">Formation en ligne</div>
+        <div class="timeline-text">E-learning asynchrone, kit pédagogique complet dès l'inscription.</div>
       </div>
-      <div class="parcours-step">
-        <span class="step-n">02</span>
-        <h4>Auto-évaluation intégrée</h4>
-        <p>Carnet de progression personnalisé et fiches pratiques applicables.</p>
+      <div class="timeline-item">
+        <div class="timeline-date">Étape 02</div>
+        <div class="timeline-title">Auto-évaluation intégrée</div>
+        <div class="timeline-text">Carnet de progression personnalisé et fiches pratiques applicables.</div>
       </div>
-      <div class="parcours-step">
-        <span class="step-n">03</span>
-        <h4>Certification</h4>
-        <p>Certificat accrédité AATHCI-BMTGA-IA-2025-CI-19, délivré sous 72 heures après validation.</p>
+      <div class="timeline-item">
+        <div class="timeline-date">Étape 03</div>
+        <div class="timeline-title">Certification</div>
+        <div class="timeline-text">Certificat accrédité AATHCI-BMTGA-IA-2025-CI-19, délivré sous 72 heures après validation.</div>
       </div>
-      <div class="parcours-step">
-        <span class="step-n">04</span>
-        <h4>Réseau BMT</h4>
-        <p>Accès à la communauté d'entraide, aux ressources et aux opportunités d'employabilité.</p>
+      <div class="timeline-item">
+        <div class="timeline-date">Étape 04</div>
+        <div class="timeline-title">Réseau BMT</div>
+        <div class="timeline-text">Accès à la communauté d'entraide, aux ressources et aux opportunités d'employabilité.</div>
       </div>
     </div>
-    <div class="accred-badge">
+    <div class="accred-badge" style="margin-top:48px;justify-content:center;">
       <strong>AATHCI-BMTGA-IA-2025-CI-19</strong>
       <span>Association des Arts Thérapeutes et Praticiens Holistiques de Côte d'Ivoire</span>
     </div>
@@ -80,32 +94,38 @@
   </div>
 </section>
 
+<div class="nav-mobile-overlay"></div>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
         <h4>BMT Green Academy</h4>
         <p>École Internationale des Arts Thérapeutiques, du Leadership Social et des Métiers Verts. Accessible dans toute l'Afrique et la diaspora.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/2250101736812" aria-label="WhatsApp">WhatsApp</a>
+          <a href="mailto:Bmtgreenacademy@gmail.com" aria-label="Email">Email</a>
+        </div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="index.html">Informations formations</a>
-        <a href="../contact.html">Accompagnement personnalisé</a>
-        <a href="parcours-etudiant.html">Modalités d'inscription</a>
-        <a href="../equipe.html">Rejoindre la communauté</a>
-      </div>
-      <div class="footer-col">
-        <h4>Découvrir</h4>
-        <a href="../a-propos.html">Qui sommes-nous</a>
+        <h5>Formations</h5>
+        <a href="index.html">Toutes les formations</a>
+        <a href="parcours-etudiant.html">Parcours étudiant</a>
         <a href="../inclusive/sport-etudes.html">Sport-Études</a>
         <a href="../univers/therapixel-afrika.html">Thérapixel Afrika</a>
-        <a href="../partenaires.html">Partenaires</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h5>L'Académie</h5>
+        <a href="../a-propos.html">Qui sommes-nous</a>
+        <a href="../equipe.html">Notre équipe</a>
+        <a href="../partenaires.html">Partenaires</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
         <p>Abidjan, Côte d'Ivoire</p>
         <a href="mailto:Bmtgreenacademy@gmail.com">Bmtgreenacademy@gmail.com</a>
-        <a href="tel:+2250101736812">0101736812 / 0777776200</a>
+        <a href="tel:+2250101736812">01 01 73 68 12</a>
+        <a href="tel:+2250777776200">07 77 77 62 00</a>
       </div>
     </div>
     <div class="footer-bottom">
