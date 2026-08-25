@@ -106,9 +106,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   letter-spacing: -0.015em;
 }
-h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 600; }
-h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 600; }
+h1 { font-size: clamp(2.4rem, 5.4vw, 4.4rem); font-weight: 700; text-wrap: balance; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 600; text-wrap: balance; }
+h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); font-weight: 600; text-wrap: balance; }
 h4 { font-size: clamp(1.05rem, 1.5vw, 1.25rem); font-weight: 600; }
 h5 { font-size: 1rem; font-weight: 600; }
 p { color: var(--text-secondary); max-width: 65ch; }
@@ -569,6 +569,14 @@ section:has(.section-dark) { padding: 0; }
 @keyframes orbFloat {
   0%, 100% { transform: translateY(0) translateX(0); }
   50% { transform: translateY(-20px) translateX(8px); }
+}
+
+.hero-wave {
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  width: 100%; height: 56px;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* — Decorative patterns — */
@@ -1705,6 +1713,70 @@ section:has(.section-dark) { padding: 0; }
 }
 .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
 
+/* ===================== ORGANIC EDITORIAL LAYER ===================== */
+/* Subtle paper-grain texture over the whole site — premium, tactile, non-sterile */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Soft organic blobs breathing life into light sections, site-wide */
+.bg-cream, .bg-ivory, .bg-surface { position: relative; overflow: hidden; }
+.bg-cream::before, .bg-ivory::before, .bg-surface::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 620px; height: 620px;
+  top: -240px; left: -220px;
+  background: radial-gradient(circle, rgba(31,169,124,0.10), transparent 65%);
+  border-radius: 50%;
+}
+.bg-cream::after, .bg-ivory::after, .bg-surface::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 520px; height: 520px;
+  bottom: -220px; right: -180px;
+  background: radial-gradient(circle, rgba(201,164,92,0.12), transparent 65%);
+  border-radius: 50%;
+}
+.bg-cream > .wrap, .bg-ivory > .wrap, .bg-surface > .wrap,
+.bg-cream > .section-compact, .bg-ivory > .section-compact, .bg-surface > .section-compact {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hand-drawn brush-stroke highlight for emphasised words */
+.mark {
+  position: relative;
+  white-space: nowrap;
+}
+.mark::after {
+  content: '';
+  position: absolute;
+  left: -4%; right: -4%; bottom: 0.02em;
+  height: 0.34em;
+  z-index: -1;
+  background: var(--grad-gold);
+  opacity: 0.45;
+  border-radius: 2px 8px 3px 9px / 6px 3px 8px 2px;
+  transform: rotate(-1deg);
+}
+
+/* Sticker-style tilt on pole/programme tags — human, anti-grid touch */
+.card-tag { display: inline-block; transition: transform var(--duration-fast) ease; }
+.grid-3 .card:nth-child(odd) .card-tag { transform: rotate(-1.4deg); }
+.grid-3 .card:nth-child(even) .card-tag { transform: rotate(1.4deg); }
+.card:hover .card-tag { transform: rotate(0deg) scale(1.04); }
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1754,6 +1826,7 @@ section:has(.section-dark) { padding: 0; }
   .hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
   .hero .lead { font-size: 1rem; }
   .hero-watermark { display: none; }
+  .hero-wave { display: none; }
 
   /* Grids */
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
