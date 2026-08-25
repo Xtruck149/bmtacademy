@@ -204,6 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ---- Magnetic tilt on elevated cards (fine pointer + motion allowed only) ---- */
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (finePointer && !reducedMotion) {
+    document.querySelectorAll('.card--elevated, .formation-card, .founder-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(800px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+  }
+
   /* ---- Active nav link based on current page ---- */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
