@@ -63,6 +63,6 @@ AATHCI-BMTGA-IA-2025-CI-19 — Association des Arts Thérapeutes et Praticiens H
 ## Contact
 
 - **Email** : Bmtgreenacademy@gmail.com
-- **Téléphone** : +225 01 01 73 68 12 / 07 77 76 20 0
+- **Téléphone** : +225 01 01 73 68 12 / 07 77 77 62 00
 - **WhatsApp** : [Écrire sur WhatsApp](https://wa.me/2250101736812)
 - **Adresse** : Abidjan, Côte d'Ivoire

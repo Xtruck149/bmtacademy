@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
       const msg = document.createElement('div');
       msg.className = 'form-success-msg';
-      msg.style.cssText = 'background:rgba(31,169,124,0.1);border:1px solid rgba(31,169,124,0.3);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-weight:600;color:var(--primary-light);font-size:0.92rem;';
+      msg.style.cssText = 'background:rgba(31,169,124,0.1);border:1px solid rgba(31,169,124,0.3);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-weight:600;color:var(--green-dark);font-size:0.92rem;';
       msg.textContent = 'Votre message a bien \u00e9t\u00e9 envoy\u00e9 ! Nous vous r\u00e9pondrons tr\u00e8s rapidement.';
       form.parentNode.insertBefore(msg, form);
       history.replaceState(null, '', window.location.pathname);
