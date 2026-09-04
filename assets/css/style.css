@@ -353,7 +353,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 
 /* ===================== FOOTER ===================== */
 .site-footer { background: var(--ink); color: rgba(255,255,255,0.75); padding: var(--space-4xl) 0 0; border-top: 6px solid var(--gold); }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-3xl); }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; gap: var(--space-2xl); padding-bottom: var(--space-3xl); }
 .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: var(--space-md); }
 .footer-logo-mark { height: 68px; width: auto; transition: transform 0.35s var(--ease); }
 .footer-logo:hover .footer-logo-mark { transform: scale(1.06) rotate(3deg); }
