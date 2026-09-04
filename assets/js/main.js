@@ -191,17 +191,18 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(el => cio.observe(el));
   }
 
-  /* ---- Contact form success feedback ---- */
-  if (window.location.search.includes('sent=1')) {
-    const form = document.querySelector('.contact-form');
-    if (form) {
-      const msg = document.createElement('div');
-      msg.className = 'form-success-msg';
-      msg.style.cssText = 'background:rgba(31,169,124,0.1);border:1px solid rgba(31,169,124,0.3);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-weight:600;color:var(--green-dark);font-size:0.92rem;';
-      msg.textContent = 'Votre message a bien \u00e9t\u00e9 envoy\u00e9 ! Nous vous r\u00e9pondrons tr\u00e8s rapidement.';
-      form.parentNode.insertBefore(msg, form);
-      history.replaceState(null, '', window.location.pathname);
-    }
+  /* ---- Contact form: build a prefilled WhatsApp message ---- */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const subject = contactForm.subject.value;
+      const message = contactForm.message.value.trim();
+      const text = `Bonjour \u00e9quipe BMT Green Academy,\n\nNom : ${name}\nEmail : ${email}\nSujet : ${subject}\n\n${message}`;
+      window.open('https://wa.me/2250101736812?text=' + encodeURIComponent(text), '_blank');
+    });
   }
 
   /* ---- Magnetic tilt on elevated cards (fine pointer + motion allowed only) ---- */

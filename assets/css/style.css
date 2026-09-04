@@ -456,6 +456,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 14px 18px; border: 3px solid var(--ink); border-radius: var(--radius-sm); font-size: 16px; background: #fff; outline: none; }
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus { box-shadow: var(--shadow-flat-sm); }
 .form-field textarea { resize: vertical; min-height: 130px; }
+.form-note { font-size: 0.8rem; color: var(--text-secondary); margin-top: var(--space-sm); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
 
 /* ===================== 404 ===================== */
