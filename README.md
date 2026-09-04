@@ -17,19 +17,35 @@ Site officiel de BMT Green Academy — académie internationale fondée à Abidj
 │   ├── index.html                # 9 pôles de formations
 │   └── parcours-etudiant.html    # Modalités d'inscription
 ├── programmes/
-│   ├── art-de-la-paix.html       # L'Art de la Paix
-│   ├── art-de-limpact.html       # L'Art de l'Impact
-│   ├── sexotherapie.html         # Sexothérapie
-│   ├── mystere-sacre-des-epices.html  # Le Mystère Sacré des Épices
-│   ├── musicotherapie.html       # Musicothérapie
-│   └── noblesse-du-coeur.html    # La Noblesse du Cœur
+│   ├── art-de-la-paix.html
+│   ├── art-de-limpact.html
+│   ├── grounding-respiration-consciente.html
+│   ├── maquillage-fx.html
+│   ├── musicotherapie.html
+│   ├── mystere-sacre-des-epices.html
+│   ├── noblesse-du-coeur.html
+│   ├── profilage-criminel.html
+│   ├── rap-ivoire-therapie.html
+│   ├── sexotherapie.html
+│   ├── therapie-par-lart-adultes.html
+│   ├── therapie-par-lart-enfants.html
+│   ├── therapie-par-lart-handicap.html
+│   └── therapie-par-le-rire.html
+├── engagement/
+│   ├── ambassadeurs-paix-fraternite.html
+│   ├── objectifs-developpement-durable.html
+│   └── rse-happy-art.html
 ├── inclusive/
-│   └── sport-etudes.html         # Sport-Études (FIRBALL)
+│   ├── sport-etudes.html         # Sport-Études (FIRBALL)
+│   ├── roll-ball-enfants.html
+│   ├── roll-ball-femmes.html
+│   └── roll-ball-hommes.html
 ├── univers/
 │   └── therapixel-afrika.html    # Thérapixel Afrika®
 ├── assets/
 │   ├── css/style.css             # Styles principaux
-│   └── js/main.js                # Interactions
+│   ├── js/main.js                # Interactions
+│   └── img/                      # Photos, logos, avatars d'équipe et de partenaires
 ├── robots.txt                    # SEO
 └── sitemap.xml                   # SEO
 ```
@@ -37,24 +53,29 @@ Site officiel de BMT Green Academy — académie internationale fondée à Abidj
 ## Fonctionnalités
 
 - Design responsive (mobile-first)
-- Animations au scroll (IntersectionObserver)
+- Animations au scroll (IntersectionObserver) et transitions natives entre
+  pages (View Transitions API, dégradation silencieuse si non supporté)
 - Menu hamburger mobile
-- Barre de progression de scroll
-- Bouton retour en haut
+- Barre de progression de scroll, bouton retour en haut
+- Halo lumineux au survol des sections hero (pointeur fin uniquement)
+- Bascule magnétique 3D sur les cartes au survol
 - Accordéons interactifs (pôles de formation)
-- Formulaire de contact (FormSubmit.co)
+- Formulaire de contact : construit un message WhatsApp pré-rempli côté
+  client (site 100% statique, aucun backend requis)
+- `prefers-reduced-motion` respecté : toutes les animations sont
+  désactivées si l'utilisateur le demande
 - Skip-to-content (accessibilité)
 - Open Graph & Twitter Cards (réseaux sociaux)
-- JSON-LD structured data (SEO)
+- JSON-LD structured data sur la page d'accueil (SEO)
 - Canonical URLs
-- Favicon SVG
+- Favicon multi-format
 
 ## Technologies
 
 - HTML5 sémantique
-- CSS3 (variables, grilles, animations)
+- CSS3 (variables, grilles, animations, View Transitions API)
 - JavaScript vanilla (aucune dépendance)
-- Google Fonts (Fraunces + Inter)
+- Google Fonts (Baloo 2 + Nunito)
 
 ## Accréditation
 
