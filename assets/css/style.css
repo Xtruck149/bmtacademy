@@ -67,7 +67,7 @@
 
 /* ===================== RESET ===================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   font-family: var(--font-body);
   color: var(--text);
@@ -171,7 +171,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 
 /* ===================== HEADER / NAV ===================== */
 .site-header {
-  position: sticky; top: 0; z-index: 100;
+  position: sticky; top: 0; z-index: 160;
   background: var(--cream);
   border-bottom: 3px solid var(--ink);
 }
@@ -371,7 +371,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 
 /* ===================== ACCRED BADGE ===================== */
 .accred-badge { display: inline-flex; gap: var(--space-md); align-items: center; background: #fff; border: 3px solid var(--ink); border-radius: 100px; padding: 12px 26px; font-size: 0.85rem; box-shadow: var(--shadow-flat-sm); }
-.accred-badge::before { content: ''; width: 34px; height: 34px; flex-shrink: 0; background-image: url('../img/logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; border-radius: 50%; }
+.accred-badge::before { content: ''; width: 40px; height: 40px; flex-shrink: 0; background-image: url('../img/accreditation-seal.png'); background-size: contain; background-repeat: no-repeat; background-position: center; }
 .accred-badge strong { color: var(--green-dark); }
 .accred-badge--light { background: var(--cream-dark); }
 
@@ -380,6 +380,14 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .founder-card h3 { margin-bottom: var(--space-sm); } .founder-card p { font-size: 0.94rem; margin-bottom: var(--space-sm); }
 .founder-diplomas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-md); }
 .founder-diplomas span { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; padding: 6px 14px; background: var(--gold); border: 2px solid var(--ink); border-radius: 100px; }
+
+.founder-portrait { border-radius: var(--radius-lg); border: 3px solid var(--ink); box-shadow: var(--shadow-flat); overflow: hidden; margin-bottom: var(--space-lg); }
+.founder-portrait img { display: block; width: 100%; height: auto; }
+
+/* ===================== PHOTO CARD (real photography) ===================== */
+.photo-card { border-radius: var(--radius-lg); border: 3px solid var(--ink); box-shadow: var(--shadow-flat); overflow: hidden; }
+.photo-card img { display: block; width: 100%; height: auto; }
+.photo-card figcaption { padding: 10px var(--space-lg); font-size: 0.78rem; color: var(--muted); background: #fff; border-top: 3px solid var(--ink); }
 
 .quote-block { position: relative; padding: var(--space-2xl); background: var(--gold); border-radius: var(--radius-lg); border: 3px solid var(--ink); }
 .quote-block blockquote { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); font-weight: 600; }
