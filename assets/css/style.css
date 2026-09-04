@@ -594,7 +594,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
   .site-header--dark .nav-links a { color: var(--ink); }
   .site-header--dark .nav-links a:hover, .site-header--dark .nav-links a.active { background: var(--gold); color: var(--ink); }
   .nav-drawer-logo { display: flex; justify-content: center; margin-bottom: var(--space-lg); }
-  .nav-drawer-logo img { height: 52px; width: auto; }
+  .nav-drawer-logo img { height: 84px; width: auto; }
   .burger { display: flex; }
   .hero { min-height: auto; padding: 60px 0 50px; }
   .hero--tall { min-height: auto; padding: 60px 0 50px; }
