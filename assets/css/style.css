@@ -5,6 +5,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
+/* ===================== VIEW TRANSITIONS ===================== */
+/* Native cross-fade between pages on browsers that support it (Chrome/Edge/Safari);
+   silently ignored elsewhere — zero JS, zero fallback needed. */
+@view-transition {
+  navigation: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
 /* ===================== DESIGN TOKENS ===================== */
 :root {
   /* — Ink & surfaces — */
@@ -247,6 +257,18 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
   opacity: 0.1;
 }
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 48px; z-index: 1; pointer-events: none; }
+/* — Cursor-follow spotlight, desktop fine-pointer only (set via main.js) — */
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  background: radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.16), transparent 70%);
+}
+.hero.has-glow::after { opacity: 1; }
 
 @keyframes blobFloat {
   0%, 100% { transform: translate(0,0) scale(1) rotate(0deg); }

@@ -218,6 +218,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
+
+    /* ---- Cursor-follow spotlight on hero sections ---- */
+    document.querySelectorAll('.hero').forEach(hero => {
+      hero.addEventListener('mouseenter', () => hero.classList.add('has-glow'));
+      hero.addEventListener('mousemove', e => {
+        const rect = hero.getBoundingClientRect();
+        hero.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+        hero.style.setProperty('--my', `${e.clientY - rect.top}px`);
+      });
+      hero.addEventListener('mouseleave', () => hero.classList.remove('has-glow'));
+    });
   }
 
   /* ---- Active nav link based on current page ---- */
