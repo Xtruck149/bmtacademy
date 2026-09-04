@@ -318,6 +318,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .breadcrumbs a { color: var(--muted); } .breadcrumbs a:hover { color: var(--ink); }
 .breadcrumbs .sep { opacity: 0.5; } .breadcrumbs .current { color: var(--ink); }
 .hero .breadcrumbs, .hero .breadcrumbs a, .hero .breadcrumbs .current { color: rgba(255,255,255,0.85); }
+.hero--warm .breadcrumbs, .hero--warm .breadcrumbs a, .hero--warm .breadcrumbs .current { color: rgba(0,0,0,0.6); }
 
 /* ===================== ACCORDION (Pole blocks) ===================== */
 .pole-block { padding: var(--space-lg) 0; border-bottom: 3px solid var(--ink); }
