@@ -346,8 +346,8 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .detail-card p { font-size: 0.85rem; margin: 0 0 8px; }
 .detail-card .detail-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); flex-wrap: wrap; }
 .detail-card .price { font-family: var(--font-display); font-weight: 800; color: var(--coral-dark); font-size: 0.85rem; }
-.detail-card .more-link { font-family: var(--font-display); font-size: 0.76rem; font-weight: 700; color: var(--green-dark); }
-.detail-card .more-link:hover { text-decoration: underline; }
+.detail-card .more-link { font-family: var(--font-display); font-size: 0.76rem; font-weight: 700; color: var(--green-dark); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(22,89,59,0.35); }
+.detail-card .more-link:hover { text-decoration-color: currentColor; }
 .detail-card .module-list { list-style: decimal; padding-left: 1.1em; margin: 6px 0 8px; }
 .detail-card .module-list li { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 2px; }
 .tag:hover { transform: translateY(-2px); box-shadow: 3px 3px 0 var(--ink); }
@@ -362,9 +362,10 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .footer-brand p { font-size: 0.9rem; max-width: 300px; color: rgba(255,255,255,0.62); }
 .footer-col h5 { color: var(--gold); font-family: var(--font-display); font-size: 0.78rem; font-weight: 800; margin-bottom: var(--space-lg); }
 .footer-col a, .footer-col p { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.62); margin-bottom: 10px; }
-.footer-col a:hover { color: var(--gold); }
+.footer-col a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.3); transition: color var(--duration-fast) var(--ease), text-decoration-color var(--duration-fast) var(--ease); }
+.footer-col a:hover { color: var(--gold); text-decoration-color: var(--gold); }
 .footer-social { display: flex; gap: var(--space-sm); margin-top: var(--space-lg); }
-.footer-social a { width: 42px; height: 42px; border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); }
+.footer-social a { width: 42px; height: 42px; border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); text-decoration: none; }
 .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-4px) rotate(-8deg); }
 .footer-bottom { border-top: 2px solid rgba(255,255,255,0.15); padding: var(--space-lg) 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); font-size: 0.8rem; }
 .footer-bottom a { color: rgba(255,255,255,0.7); }
@@ -531,6 +532,9 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .logo-card { background: #fff; border: 3px solid var(--ink); border-radius: var(--radius); padding: var(--space-xl); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px; text-align: center; box-shadow: var(--shadow-flat-sm); transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease); }
 .logo-card:hover { transform: translate(-3px,-3px); box-shadow: var(--shadow-flat); }
 .logo-card h4 { font-size: 0.98rem; }
+.logo-card-avatar { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 0.92rem; color: #fff; background: var(--green); margin-bottom: var(--space-sm); flex-shrink: 0; }
+.logo-card:nth-child(3n+2) .logo-card-avatar { background: var(--gold); color: var(--ink); }
+.logo-card:nth-child(3n) .logo-card-avatar { background: var(--coral); }
 .partner-desc { font-size: 0.85rem; margin-top: var(--space-xs); color: var(--text-secondary); }
 
 /* ===================== FORMATION CARD ===================== */
@@ -544,8 +548,8 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .formation-card-body p { font-size: 0.88rem; }
 .formation-card-footer { padding: 0 var(--space-xl) var(--space-xl); display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
 .price { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; color: var(--coral-dark); }
-.pole-link { display: inline-block; margin-top: var(--space-md); font-family: var(--font-display); font-weight: 700; font-size: 0.88rem; color: var(--green-dark); }
-.pole-link:hover { text-decoration: underline; }
+.pole-link { display: inline-block; margin-top: var(--space-md); font-family: var(--font-display); font-weight: 700; font-size: 0.88rem; color: var(--green-dark); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(22,89,59,0.35); }
+.pole-link:hover { text-decoration-color: currentColor; }
 
 /* Flat visual fills for formation-card-visual (was gradients, now solid) */
 .grad-green { background: var(--green); } .grad-gold { background: var(--gold); }
