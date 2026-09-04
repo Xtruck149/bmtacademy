@@ -336,6 +336,18 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .tag { padding: 7px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; border: 2px solid var(--ink); transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease); }
 .tag.now { background: var(--green); color: #fff; }
 .tag.soon { background: #fff; color: var(--muted); }
+
+/* — Inline expanded program detail (formations catalogue) — */
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: var(--space-md); margin-bottom: var(--space-md); }
+.detail-card { background: #fff; border: 2.5px solid var(--ink); border-radius: var(--radius-sm); padding: var(--space-md) var(--space-lg); }
+.detail-card h5 { font-size: 0.98rem; margin-bottom: 4px; }
+.detail-card p { font-size: 0.85rem; margin: 0 0 8px; }
+.detail-card .detail-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); flex-wrap: wrap; }
+.detail-card .price { font-family: var(--font-display); font-weight: 800; color: var(--coral-dark); font-size: 0.85rem; }
+.detail-card .more-link { font-family: var(--font-display); font-size: 0.76rem; font-weight: 700; color: var(--green-dark); }
+.detail-card .more-link:hover { text-decoration: underline; }
+.detail-card .module-list { list-style: decimal; padding-left: 1.1em; margin: 6px 0 8px; }
+.detail-card .module-list li { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 2px; }
 .tag:hover { transform: translateY(-2px); box-shadow: 3px 3px 0 var(--ink); }
 
 /* ===================== FOOTER ===================== */
