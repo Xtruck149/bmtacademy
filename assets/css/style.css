@@ -269,7 +269,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
   background-image: url('../img/logo.png');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 820px;
+  background-size: min(820px, 78vw);
   opacity: 0.1;
 }
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 48px; z-index: 1; pointer-events: none; }

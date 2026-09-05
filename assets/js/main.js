@@ -232,10 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---- Active nav link based on current page ---- */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href').split('/').pop();
-    if (href === currentPath) {
+    const hashMatches = link.hash ? link.hash === window.location.hash : true;
+    if (link.pathname === window.location.pathname && hashMatches) {
       link.classList.add('active');
     }
   });
