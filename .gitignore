@@ -1,0 +1,4 @@
+# Raw media pulled from the old live site during content migration (see TODO.md).
+# Pick what you need from here and move it into assets/img/ or assets/video/ as you build each page.
+content-import/media/
+content-import/video/
