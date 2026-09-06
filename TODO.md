@@ -2,6 +2,30 @@
 
 Status: **largely complete** (2026-09-06). Between an earlier round of work already on `main` (37 commits — full nav restructuring, real photography under `assets/img/`, and dedicated pages for nearly everything on this list) and this pass, almost everything from the original audit is now built. Full extracted copy and **every** photo and video from the old live site are staged under [`content-import/`](content-import) for reference (gitignored raw media: `content-import/media/` — **1,710 images, 409MB** — and `content-import/video/` — **72 clips, 627MB** — pulled straight from the old site's own asset manifest, so this is the complete set, not a sample).
 
+## Groupe 1-4 — Fonctionnalités statiques (nouvelle passe, 2026-09-06)
+
+Toutes les tâches des Groupes 1 à 4 d'une spécification produit sont maintenant en place, 100% statiques (aucun backend), commitées par groupe atomique :
+
+- [x] **Groupe 1** — Copyright dynamique (`#copyright-year` + JS), fallback email sous le bouton WhatsApp de `contact.html`, icônes Instagram/Facebook dans tous les footers + `sameAs` JSON-LD.
+- [x] **Groupe 2** — Toutes les `.jpg`/`.png` inline converties en `<picture>` avec source `.webp` (originaux conservés), `background-image` converti en `image-set()` avec fallback JPG. 73 fichiers WebP générés (assets/img : 4.4MB → 7.6MB avec les deux formats côte à côte).
+- [x] **Groupe 3** — Section "Ce que disent nos étudiants" (placeholders explicites) sur `contact.html` et `a-propos.html` ; emplacement du lien certificat AATHCI avec commentaire TODO dans `contact.html`.
+- [x] **Groupe 4** — 8 fonctionnalités statiques : quiz "Trouve ta formation" (`formations/trouve-ta-formation.html`), vérification de certificat (`verification.html` + `assets/data/certificats.json`), Service Worker (`sw.js`, à la racine — pas dans `assets/`, voir note ci-dessous), badge Alumni téléchargeable (`formations/mon-badge.html`), carte interactive diaspora (`a-propos.html#diaspora` + `assets/data/diaspora.json`), calendrier des rentrées (`formations/index.html` + `assets/data/sessions.json`), bascule FR/EN (`index.html` et `formations/index.html`), FAQ avec recherche instantanée (`faq.html`).
+
+**Écart volontaire par rapport à la spec** : `sw.js` vit à la racine du dépôt plutôt que dans `assets/`. GitHub Pages ne permet pas d'envoyer l'en-tête `Service-Worker-Allowed`, donc un Service Worker enregistré depuis `assets/sw.js` ne pourrait avoir qu'un scope `assets/` et ne contrôlerait aucune page HTML du site — la mise en cache hors-ligne des pages (l'objectif principal de la tâche) ne fonctionnerait pas du tout. Placé à la racine, son scope couvre tout le site.
+
+**Bug découvert et corrigé pendant cette passe** : `.hero--photo::before` (le gradient sombre garantissant la lisibilité du texte sur les photos) et `.hero::before` (le filigrane du logo, appliqué à tous les hero) ciblaient le même pseudo-élément avec une spécificité CSS égale — le filigrane, déclaré plus bas dans la feuille de style, gagnait systématiquement, laissant les 25 pages à photo de fond totalement non assombries avec du texte blanc illisible par-dessus. Corrigé en déplaçant le gradient sur `::after` ; le logo reste centré et discret sur les hero à couleur plate, et devient un vrai badge `<img>` net et bien présenté à droite sur les hero à photo.
+
+## Placeholders à remplacer avant mise en production
+
+- **Réseaux sociaux** — `https://instagram.com/bmtgreenacademy` et `https://facebook.com/bmtgreenacademy` dans tous les footers + JSON-LD sont des URLs d'exemple, à remplacer par les vrais comptes.
+- **Témoignages** — `contact.html` et `a-propos.html` contiennent 3+3 cartes `[Témoignage à remplacer]` explicitement fictives, jamais présentées comme réelles.
+- **Certificat AATHCI** — lien vers le PDF ou le site de l'association à ajouter dans `contact.html` (commentaire `<!-- TODO -->` en place).
+- **`assets/data/certificats.json`** — 3 entrées fictives marquées `"placeholder": true`, à remplacer par les vrais numéros de certificats délivrés.
+- **`assets/data/diaspora.json`** — 8 villes avec effectifs d'exemple marqués `"placeholder": true`, à remplacer par les vrais chiffres de l'Académie.
+- **`assets/data/sessions.json`** — 6 sessions avec dates d'exemple marquées `"placeholder": true`, à remplacer par le vrai calendrier.
+- **FAQ (`faq.html`)** — contenu réaliste mais explicitement marqué "Brouillon — à valider avec l'équipe pédagogique", notamment les tarifs et facilités de paiement.
+- **Traductions FR/EN** — seuls le hero et quelques titres d'`index.html` et `formations/index.html` sont traduits (voir `data-fr`/`data-en` dans ces deux fichiers). Le H1 de chaque hero, tout le contenu des pôles/programmes, les footers, et toutes les autres pages restent en français uniquement.
+
 ## Media now integrated into the live pages
 
 - [x] **Roll Ball Hommes/Femmes/Enfants/Handi** — all 4 pages were using a generic reused stock photo (`roll-ball-action.jpg` / `roll-ball-team.jpg`). Replaced each with a real, verified, category-specific photo from the old site (`assets/img/roll-ball-{hommes,femmes,enfants,handi}-1.jpg`), each visually confirmed to show the correct team/category before use, credited to ABDY Photographie (the watermark on the originals).
