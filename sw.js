@@ -4,7 +4,7 @@
    network-first avec repli sur le cache pour les pages HTML.
    Site 100% statique : aucune dépendance à un backend.
    ========================================================== */
-const CACHE_NAME = 'bmt-academy-v1';
+const CACHE_NAME = 'bmt-academy-v2';
 const STATIC_EXT = /\.(css|js|png|jpe?g|webp|svg|gif|ico|woff2?|ttf|json)$/i;
 
 self.addEventListener('install', () => {

@@ -238,13 +238,17 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .hero--coral { background: var(--coral); }
 .hero--default { background: var(--green); }
 .hero--photo { background-size: cover; background-position: center; color: #fff; }
-.hero--photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,32,22,0.65) 0%, rgba(20,32,22,0.85) 100%); z-index: 1; }
+/* Overlay lives on ::after (not ::before) so it never collides with the
+   .hero::before logo watermark below — both used to fight over the same
+   pseudo-element's `background` shorthand and the logo was silently
+   winning, leaving hero photos completely undarkened and text unreadable. */
+.hero--photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,32,22,0.7) 0%, rgba(20,32,22,0.88) 100%); z-index: 1; pointer-events: none; }
 .hero--photo h1 em { color: var(--gold); text-decoration: none; }
 .hero--photo .breadcrumbs, .hero--photo .breadcrumbs a, .hero--photo .breadcrumbs .current { color: rgba(255,255,255,0.75); }
 .hero--photo .breadcrumbs a { text-decoration-color: rgba(255,255,255,0.4); }
 .hero--photo .eyebrow:not(.eyebrow--light):not(.eyebrow--dark) { background: #fff; color: var(--ink); border-color: var(--ink); }
 .hero--centered .hero-inner { max-width: 800px; text-align: center; margin: 0 auto; }
-.hero-inner { position: relative; z-index: 2; max-width: 700px; }
+.hero-inner { position: relative; z-index: 3; max-width: 700px; }
 .hero h1 { color: inherit; margin-bottom: var(--space-lg); }
 .hero h1 em { font-style: normal; color: var(--gold); }
 .hero--warm h1 em { color: var(--ink); text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px; }
@@ -267,18 +271,21 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .hero-blob { position: absolute; z-index: 0; pointer-events: none; opacity: 0.9; animation: blobFloat 10s ease-in-out infinite; }
 .hero-blob.b1 { width: 340px; height: 340px; background: rgba(255,255,255,0.14); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; top: -80px; right: -60px; }
 .hero-blob.b2 { width: 220px; height: 220px; background: rgba(255,255,255,0.10); border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%; bottom: -60px; left: -40px; animation-delay: -4s; animation-duration: 13s; }
-/* — Logo watermark, auto-applied to every hero, no markup needed — */
+/* — Logo watermark, auto-applied to every hero, no markup needed.
+   Sits far right on z-index 2, above the .hero--photo::after darkening
+   overlay (z-index 1), so it stays a visible brand mark on photo heroes
+   instead of being washed out underneath the gradient. — */
 .hero::before {
   content: '';
   position: absolute;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
   inset: 0;
   background-image: url('../img/logo.png');
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: min(820px, 78vw);
-  opacity: 0.1;
+  background-position: right 4% center;
+  background-size: min(200px, 24vw);
+  opacity: 0.16;
 }
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 48px; z-index: 1; pointer-events: none; }
 
