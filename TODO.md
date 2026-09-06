@@ -7,7 +7,16 @@ Status: **largely complete** (2026-09-06). Between an earlier round of work alre
 - [x] **Roll Ball Hommes/Femmes/Enfants/Handi** — all 4 pages were using a generic reused stock photo (`roll-ball-action.jpg` / `roll-ball-team.jpg`). Replaced each with a real, verified, category-specific photo from the old site (`assets/img/roll-ball-{hommes,femmes,enfants,handi}-1.jpg`), each visually confirmed to show the correct team/category before use, credited to ABDY Photographie (the watermark on the originals).
 - Maquillage FX, Ambassadeurs de la Paix, Grounding, Rap Ivoire Thérapie, Thérapie par le Rire already had correct real photography from the earlier build pass — no changes needed.
 
-## Hero photo wallpapers + navigation-visibility fixes (this pass)
+## Site-wide technical/aesthetic audit (this pass)
+
+- [x] **Image optimization** — re-encoded all 80 JPG/PNG assets (mozjpeg quality 78, PNG level 9, capped at 1920px wide). `assets/img`: 6.6MB → 4.4MB (-33%), no visible quality loss (spot-checked the logo and a photo-heavy image), no format changes.
+- [x] **Accessibility** — fixed 21 team photos in `equipe.html` that had empty `alt=""` (a real WCAG failure for meaningful content images); now `alt="Photo de <name>"`.
+- [x] **SEO** — homepage `<title>` was 112 characters (badly truncated in search results); shortened to match its own already-correct, shorter `og:title`. Fixed a raw `&` → `&amp;` in `maquillage-fx.html`'s social meta tags.
+- [x] **Verified, no fix needed**: 0 broken links/assets (32 pages), 0 console errors, 0 horizontal-overflow elements at 375px width across every page type — checked via real page loads (an initial `iframe.srcdoc`-based test method gave false positives due to relative-URL resolution quirks; discarded and re-verified properly before concluding anything).
+- Confirmed the `<title>` vs `og:title` differences on several programme pages (longer keyword-rich `<title>`, punchier `og:title` for social shares) are intentional — left alone.
+- [x] **Docs** — README now documents the GitHub Pages deployment and flags that `bmtgreenacademy.com` is a separate, unconnected domain.
+
+## Hero photo wallpapers + navigation-visibility fixes (earlier pass)
 
 The site went live at **https://xtruck149.github.io/bmtacademy/** (GitHub Pages, auto-deploys from `main` — note: **`bmtgreenacademy.com` is a separate, still-live deployment of the OLD site and is not connected to this repo**; nothing pushed here appears there until someone points that domain at this repo or redeploys this code where it's actually hosted).
 
