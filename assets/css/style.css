@@ -201,6 +201,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .nav-links a.active::before { content: none; }
 .site-header--dark .nav-links a::before { content: none; }
 .nav-cta { margin-left: 8px; }
+.lang-toggle { margin-left: 8px; min-width: 44px; font-family: var(--font-display); }
 .nav-cta .btn { padding: 13px 28px; font-size: 0.92rem; }
 
 /* — Header dropdown (desktop hover / focus, always-open list on mobile) — */
