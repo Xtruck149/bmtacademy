@@ -1,3 +1,16 @@
+/* ---- Service Worker (mise en cache hors-ligne) ----
+   sw.js vit à la racine du site (et non dans assets/) car GitHub
+   Pages ne permet pas d'envoyer l'en-tête Service-Worker-Allowed :
+   un SW enregistré depuis assets/ ne pourrait pas contrôler les
+   pages HTML situées à la racine ou dans les sous-dossiers. */
+const mainScriptSrc = document.currentScript ? document.currentScript.src : '';
+if ('serviceWorker' in navigator && mainScriptSrc) {
+  window.addEventListener('load', () => {
+    const siteRoot = mainScriptSrc.replace(/assets\/js\/main\.js(\?.*)?$/, '');
+    navigator.serviceWorker.register(siteRoot + 'sw.js').catch(() => {});
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- Mobile navigation ---- */
