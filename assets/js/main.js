@@ -239,4 +239,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ---- Footer copyright year (never needs manual updating again) ---- */
+  const copyrightYear = document.getElementById('copyright-year');
+  if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
+
 });
