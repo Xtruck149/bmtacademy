@@ -271,21 +271,37 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .hero-blob { position: absolute; z-index: 0; pointer-events: none; opacity: 0.9; animation: blobFloat 10s ease-in-out infinite; }
 .hero-blob.b1 { width: 340px; height: 340px; background: rgba(255,255,255,0.14); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; top: -80px; right: -60px; }
 .hero-blob.b2 { width: 220px; height: 220px; background: rgba(255,255,255,0.10); border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%; bottom: -60px; left: -40px; animation-delay: -4s; animation-duration: 13s; }
-/* — Logo watermark, auto-applied to every hero, no markup needed.
-   Sits far right on z-index 2, above the .hero--photo::after darkening
-   overlay (z-index 1), so it stays a visible brand mark on photo heroes
-   instead of being washed out underneath the gradient. — */
+/* — Logo watermark, auto-applied to every flat-color hero, no markup
+   needed: centered, subtle, sitting in the background. Photo heroes
+   opt out of this (see .hero--photo::before below) and use a real
+   <img class="hero-logo-badge"> instead — a crisp foreground mark,
+   not a low-opacity background blend, positioned far right. — */
 .hero::before {
   content: '';
   position: absolute;
-  z-index: 2;
+  z-index: 0;
   pointer-events: none;
   inset: 0;
   background-image: url('../img/logo.png');
   background-repeat: no-repeat;
-  background-position: right 4% center;
-  background-size: min(200px, 24vw);
-  opacity: 0.16;
+  background-position: center center;
+  background-size: min(820px, 78vw);
+  opacity: 0.1;
+}
+.hero--photo::before { content: none; }
+.hero-logo-badge {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: min(120px, 16vw);
+  height: auto;
+  padding: 12px;
+  background: rgba(255,255,255,0.16);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius);
+  pointer-events: none;
 }
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 48px; z-index: 1; pointer-events: none; }
 
