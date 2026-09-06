@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bmtgreenacademy.com/sitemap.xml
+Sitemap: https://xtruck149.github.io/bmtacademy/sitemap.xml
