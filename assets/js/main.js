@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---- Pole-block accordion ---- */
   document.querySelectorAll('.pole-block-head').forEach(head => {
     head.setAttribute('role', 'button');
-    head.setAttribute('aria-expanded', 'false');
+    head.setAttribute('aria-expanded', String(head.closest('.pole-block').classList.contains('is-open')));
     head.setAttribute('tabindex', '0');
     head.addEventListener('click', () => {
       const block = head.closest('.pole-block');
