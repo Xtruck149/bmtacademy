@@ -236,13 +236,18 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .hero--warm { background: var(--gold); color: var(--ink); }
 .hero--coral { background: var(--coral); }
 .hero--default { background: var(--green); }
-.hero--photo { background-size: cover; background-position: center; }
-.hero--photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,32,22,0.6) 0%, rgba(20,32,22,0.82) 100%); z-index: 1; }
+.hero--photo { background-size: cover; background-position: center; color: #fff; }
+.hero--photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,32,22,0.65) 0%, rgba(20,32,22,0.85) 100%); z-index: 1; }
+.hero--photo h1 em { color: var(--gold); text-decoration: none; }
+.hero--photo .breadcrumbs, .hero--photo .breadcrumbs a, .hero--photo .breadcrumbs .current { color: rgba(255,255,255,0.75); }
+.hero--photo .breadcrumbs a { text-decoration-color: rgba(255,255,255,0.4); }
+.hero--photo .eyebrow:not(.eyebrow--light):not(.eyebrow--dark) { background: #fff; color: var(--ink); border-color: var(--ink); }
 .hero--centered .hero-inner { max-width: 800px; text-align: center; margin: 0 auto; }
 .hero-inner { position: relative; z-index: 2; max-width: 700px; }
 .hero h1 { color: inherit; margin-bottom: var(--space-lg); }
 .hero h1 em { font-style: normal; color: var(--gold); }
 .hero--warm h1 em { color: var(--ink); text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px; }
+.hero--warm.hero--photo h1 em { color: var(--gold); text-decoration: none; }
 .hero .lead { font-size: clamp(1.05rem, 1.5vw, 1.2rem); color: inherit; opacity: 0.95; max-width: 560px; margin-bottom: var(--space-2xl); }
 .hero--centered .hero .lead { margin-left: auto; margin-right: auto; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -587,6 +592,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 
 /* Flat visual fills for formation-card-visual (was gradients, now solid) */
 .grad-green { background: var(--green); } .grad-gold { background: var(--gold); }
+.formation-card-visual.has-photo { background-size: cover; background-position: center; }
 .grad-coral { background: var(--coral); } .grad-amber { background: var(--gold-dark); }
 .grad-teal { background: var(--teal); } .grad-dark { background: var(--ink); }
 
