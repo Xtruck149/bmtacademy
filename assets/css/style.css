@@ -518,6 +518,17 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 }
 .form-group input[type="text"]:focus, .form-group select:focus { outline: 3px solid var(--gold); outline-offset: 1px; }
 
+/* ---- Carte interactive diaspora ---- */
+.diaspora-map-wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-2xl); align-items: center; }
+#diaspora-map { width: 100%; height: auto; }
+.diaspora-continent { fill: var(--cream-dark); stroke: var(--ink); stroke-width: 3; }
+.diaspora-diaspora-links line { stroke: var(--gold-dark); stroke-width: 2; stroke-dasharray: 6 6; opacity: 0.7; }
+.diaspora-point { fill: var(--green); stroke: var(--ink); stroke-width: 2.5; cursor: pointer; transition: fill 0.2s var(--ease); }
+.diaspora-point:hover, .diaspora-point:focus { fill: var(--gold); outline: none; }
+.diaspora-detail { background: #fff; border: 3px solid var(--ink); border-radius: var(--radius); box-shadow: var(--shadow-flat-sm); padding: var(--space-lg); min-height: 140px; }
+.diaspora-count { font-weight: 800; color: var(--green-dark); font-size: 1.1rem; }
+@media (max-width: 860px) { .diaspora-map-wrap { grid-template-columns: 1fr; } }
+
 /* ===================== 404 ===================== */
 .error-page { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--purple); color: #fff; }
 .error-page h1 { font-size: clamp(5rem, 12vw, 10rem); color: #fff; -webkit-text-stroke: 4px var(--ink); }

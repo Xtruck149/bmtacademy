@@ -1,0 +1,13 @@
+{
+  "_lisezmoi": "Données d'exemple/placeholder pour la carte interactive de a-propos.html. Remplacez 'etudiants' par les chiffres réels de l'Académie ; 'x'/'y' positionnent le point dans le viewBox 0 0 640 440 du SVG #diaspora-map.",
+  "points": [
+    { "id": "abidjan", "pays": "Côte d'Ivoire", "ville": "Abidjan (siège)", "etudiants": 240, "x": 330, "y": 210, "placeholder": true },
+    { "id": "dakar", "pays": "Sénégal", "ville": "Dakar", "etudiants": 55, "x": 275, "y": 170, "placeholder": true },
+    { "id": "abuja", "pays": "Nigéria", "ville": "Abuja", "etudiants": 80, "x": 400, "y": 220, "placeholder": true },
+    { "id": "yaounde", "pays": "Cameroun", "ville": "Yaoundé", "etudiants": 45, "x": 400, "y": 270, "placeholder": true },
+    { "id": "kinshasa", "pays": "RD Congo", "ville": "Kinshasa", "etudiants": 60, "x": 420, "y": 330, "placeholder": true },
+    { "id": "casablanca", "pays": "Maroc", "ville": "Casablanca", "etudiants": 35, "x": 320, "y": 70, "placeholder": true },
+    { "id": "paris", "pays": "France (diaspora)", "ville": "Paris", "etudiants": 70, "x": 60, "y": 70, "placeholder": true },
+    { "id": "montreal", "pays": "Canada (diaspora)", "ville": "Montréal", "etudiants": 30, "x": 90, "y": 360, "placeholder": true }
+  ]
+}

@@ -257,6 +257,29 @@
   </div>
 </section>
 
+<section class="bg-cream" id="diaspora">
+  <div class="wrap">
+    <div class="section-header centered reveal">
+      <span class="eyebrow">Notre communauté</span>
+      <h2>Une Académie panafricaine et sa diaspora</h2>
+      <p class="lead">Survolez ou touchez un point pour découvrir la communauté BMT dans chaque région. <em>Chiffres d'exemple, à remplacer par les données réelles de l'Académie.</em></p>
+    </div>
+    <div class="diaspora-map-wrap">
+      <svg id="diaspora-map" viewBox="0 0 640 440" role="img" aria-label="Carte simplifiée de la présence de BMT Green Academy en Afrique et dans sa diaspora">
+        <path class="diaspora-continent" d="M330 20 C 380 15, 430 25, 460 45 C 500 65, 530 100, 555 140 C 575 175, 565 210, 540 235 C 555 270, 545 310, 520 350 C 500 385, 470 410, 435 425 C 415 435, 400 425, 395 405 C 375 390, 365 365, 370 335 C 345 310, 320 280, 315 245 C 290 225, 270 200, 275 170 C 255 155, 245 130, 260 110 C 250 90, 255 65, 280 50 C 295 35, 315 25, 330 20 Z"></path>
+        <g class="diaspora-diaspora-links">
+          <line x1="60" y1="70" x2="270" y2="130"></line>
+          <line x1="90" y1="360" x2="330" y2="330"></line>
+        </g>
+        <g id="diaspora-points"></g>
+      </svg>
+      <div id="diaspora-detail" class="diaspora-detail" aria-live="polite">
+        <p class="form-note">Survolez un point de la carte pour voir le détail ici.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="bg-surface">
   <div class="wrap">
     <div class="section-header centered">
@@ -352,5 +375,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/diaspora.js"></script>
 </body>
 </html>
