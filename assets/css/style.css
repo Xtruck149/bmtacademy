@@ -441,6 +441,7 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 
 /* ===================== SKIP LINK ===================== */
 .skip-link { position: absolute; top: -100%; left: var(--space-md); z-index: 999; padding: 14px 24px; background: var(--gold); color: var(--ink); font-weight: 800; border: 3px solid var(--ink); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .skip-link:focus { top: 0; }
 
 /* ===================== BADGES ===================== */
@@ -527,6 +528,19 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
   border: 2.5px solid var(--ink); border-radius: var(--radius-sm); background: #fff;
 }
 .form-group input[type="text"]:focus, .form-group select:focus { outline: 3px solid var(--gold); outline-offset: 1px; }
+
+/* ---- Accordion (FAQ, etc.) ---- */
+.accordion-list { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-lg); }
+.accordion-item { border: 2.5px solid var(--ink); border-radius: var(--radius-sm); background: #fff; overflow: hidden; }
+.accordion-trigger { width: 100%; text-align: left; background: none; border: none; padding: 16px 20px; font: inherit; font-size: 1rem; font-weight: 700; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); }
+.accordion-trigger:hover { background: var(--cream); }
+.accordion-trigger::after { content: '+'; font-size: 1.4rem; line-height: 1; flex-shrink: 0; color: var(--gold-dark); transition: transform 0.2s var(--ease); }
+.accordion-item.is-open .accordion-trigger::after { transform: rotate(45deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.3s var(--ease); }
+.accordion-body-inner { padding: 0 20px 18px; color: var(--text-secondary); }
+.accordion-item[hidden] { display: none; }
+.faq-search { position: relative; margin-bottom: var(--space-lg); }
+.faq-empty { text-align: center; color: var(--muted); padding: var(--space-xl) 0; }
 
 /* ---- Carte interactive diaspora ---- */
 .diaspora-map-wrap { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-2xl); align-items: center; }
