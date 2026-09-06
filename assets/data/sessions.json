@@ -1,0 +1,11 @@
+{
+  "_lisezmoi": "Dates d'exemple/placeholder pour la section 'Prochaines rentrées' de formations/index.html. Remplacez par le calendrier réel des sessions. 'places' vaut 'limitees' ou 'disponibles'.",
+  "sessions": [
+    { "formation": "L'Art de la Paix", "date": "2026-10-12", "lieu": "Abidjan — présentiel & distanciel", "places": "limitees", "placeholder": true },
+    { "formation": "Parcours étudiant complet", "date": "2026-11-03", "lieu": "100% en ligne", "places": "disponibles", "placeholder": true },
+    { "formation": "Musicothérapie", "date": "2026-12-07", "lieu": "Abidjan — présentiel", "places": "disponibles", "placeholder": true },
+    { "formation": "Maquillage FX", "date": "2027-01-18", "lieu": "Abidjan — présentiel", "places": "limitees", "placeholder": true },
+    { "formation": "Sport-Études", "date": "2027-02-08", "lieu": "Abidjan — présentiel", "places": "disponibles", "placeholder": true },
+    { "formation": "Sexothérapie", "date": "2027-03-15", "lieu": "100% en ligne", "places": "limitees", "placeholder": true }
+  ]
+}

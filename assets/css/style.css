@@ -374,6 +374,8 @@ section { padding: var(--space-4xl) 0; position: relative; overflow: hidden; }
 .tag { padding: 7px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; border: 2px solid var(--ink); transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease); }
 .tag.now { background: var(--green); color: #fff; }
 .tag.soon { background: #fff; color: var(--muted); }
+.tag.limited { background: var(--coral); color: #fff; }
+.tag.available { background: var(--green); color: #fff; }
 
 /* — Inline expanded program detail (formations catalogue) — */
 .detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: var(--space-md); margin-bottom: var(--space-md); }
