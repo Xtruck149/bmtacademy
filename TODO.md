@@ -7,9 +7,20 @@ Status: **largely complete** (2026-09-06). Between an earlier round of work alre
 - [x] **Roll Ball Hommes/Femmes/Enfants/Handi** — all 4 pages were using a generic reused stock photo (`roll-ball-action.jpg` / `roll-ball-team.jpg`). Replaced each with a real, verified, category-specific photo from the old site (`assets/img/roll-ball-{hommes,femmes,enfants,handi}-1.jpg`), each visually confirmed to show the correct team/category before use, credited to ABDY Photographie (the watermark on the originals).
 - Maquillage FX, Ambassadeurs de la Paix, Grounding, Rap Ivoire Thérapie, Thérapie par le Rire already had correct real photography from the earlier build pass — no changes needed.
 
+## Hero photo wallpapers + navigation-visibility fixes (this pass)
+
+The site went live at **https://xtruck149.github.io/bmtacademy/** (GitHub Pages, auto-deploys from `main` — note: **`bmtgreenacademy.com` is a separate, still-live deployment of the OLD site and is not connected to this repo**; nothing pushed here appears there until someone points that domain at this repo or redeploys this code where it's actually hosted).
+
+Three real bugs were reported via the live site and fixed:
+- [x] **Invisible dropdown menu text** — `.site-header--dark .nav-links a { color:#fff }` and the intended fix `.site-header--dark .nav-dropdown-panel a { color: var(--ink) }` had equal CSS specificity, so the later rule always won, making every nav dropdown panel's links white-on-white (fully invisible) on any dark-header page. Fixed by raising the panel-link rule's specificity.
+- [x] **New pages hidden behind a collapsed accordion** — every Pôle on `formations/index.html` (including the ones containing Maquillage FX, the Roll Ball pages, Profilage Criminel, etc.) was collapsed by default via `.pole-block-body { max-height:0 }`, so those "Voir la page complète" links were invisible until a visitor clicked a Pôle header first. Defaulted all 9 Pôles open.
+- [x] **Real photos as hero backgrounds, site-wide** — added a `.hero--photo` variant (cover background + dark gradient overlay) and applied it everywhere a real photo already existed: all 6 flagship programs, Profilage Criminel, both Thérapie par l'Art pages, Maquillage FX, Grounding, Thérapie par le Rire, Rap Ivoire Thérapie, Thérapixel Afrika, Ambassadeurs de la Paix, RSE/Happy Art, ODD, Sport-Études + all 4 Roll Ball pages, Home, and Qui sommes-nous (founder photo). Also gave the 6 flagship "Formations phares" cards their own program photo instead of a flat color fill.
+- [x] **Bug this introduced, caught and fixed**: `.hero--warm` sets dark ink text for its light gold background — combined with the new dark photo overlay, that text would have been invisible. Forced `.hero--photo` to always use light text/gold accents regardless of the color variant it's paired with, including a CSS specificity fix so it reliably wins over `.hero--warm`'s conflicting rule. Verified via a cache-bypassing fetch against the deployed CSS (GitHub Pages' CDN cache briefly served stale CSS after each push during testing — not a real bug, resolves in a few minutes or a hard refresh).
+
 ## Still open
 
 - **Video embeds** — no video is used anywhere on the site yet (it's fully photo-based by design); the 72 downloaded clips aren't matched to specific pages beyond the 8 originally tied to the founder Biographie page by timing. Before embedding any, they need to be previewed (no `ffmpeg`/`ffprobe` available in this environment to inspect them locally) and matched to the right page — a deliberate next step, not done blindly.
+- **`bmtgreenacademy.com` is not connected to this repo** — if the goal is to replace the live site, that needs a `CNAME` file here plus a DNS change on the domain owner's side. Flagged to the user; not something to do unilaterally.
 
 ## What this pass added on top of the existing work
 
