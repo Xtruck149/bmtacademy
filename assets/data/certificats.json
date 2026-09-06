@@ -1,0 +1,26 @@
+{
+  "_lisezmoi": "Fichier statique servant de base de vérification pour verification.html. Pour ajouter un certificat réel, ajoutez un objet {\"numero\", \"nom\", \"formation\", \"annee\"} au tableau 'certificats' ci-dessous. Aucune base de données n'est utilisée : ce fichier JSON est lu directement par le navigateur.",
+  "certificats": [
+    {
+      "numero": "AATHCI-BMTGA-2025-0001",
+      "nom": "Exemple Fictif — Prénom Nom",
+      "formation": "L'Art de la Paix",
+      "annee": "2025",
+      "_placeholder": true
+    },
+    {
+      "numero": "AATHCI-BMTGA-2025-0002",
+      "nom": "Exemple Fictif — Prénom Nom",
+      "formation": "Musicothérapie",
+      "annee": "2025",
+      "_placeholder": true
+    },
+    {
+      "numero": "AATHCI-BMTGA-2024-0147",
+      "nom": "Exemple Fictif — Prénom Nom",
+      "formation": "Parcours étudiant complet",
+      "annee": "2024",
+      "_placeholder": true
+    }
+  ]
+}
