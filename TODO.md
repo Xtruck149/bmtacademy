@@ -1,6 +1,15 @@
 # TODO — Reproduce remaining content from the old bmtgreenacademy.com
 
-Status: **largely complete** (2026-09-06). Between an earlier round of work already on `main` (37 commits — full nav restructuring, real photography under `assets/img/`, and dedicated pages for nearly everything on this list) and this pass, almost everything from the original audit is now built. Full extracted copy and every photo/video found from the old live site remain staged under [`content-import/`](content-import) for reference (gitignored raw media: `content-import/media/` 265 images, `content-import/video/` 8 clips).
+Status: **largely complete** (2026-09-06). Between an earlier round of work already on `main` (37 commits — full nav restructuring, real photography under `assets/img/`, and dedicated pages for nearly everything on this list) and this pass, almost everything from the original audit is now built. Full extracted copy and **every** photo and video from the old live site are staged under [`content-import/`](content-import) for reference (gitignored raw media: `content-import/media/` — **1,710 images, 409MB** — and `content-import/video/` — **72 clips, 627MB** — pulled straight from the old site's own asset manifest, so this is the complete set, not a sample).
+
+## Media now integrated into the live pages
+
+- [x] **Roll Ball Hommes/Femmes/Enfants/Handi** — all 4 pages were using a generic reused stock photo (`roll-ball-action.jpg` / `roll-ball-team.jpg`). Replaced each with a real, verified, category-specific photo from the old site (`assets/img/roll-ball-{hommes,femmes,enfants,handi}-1.jpg`), each visually confirmed to show the correct team/category before use, credited to ABDY Photographie (the watermark on the originals).
+- Maquillage FX, Ambassadeurs de la Paix, Grounding, Rap Ivoire Thérapie, Thérapie par le Rire already had correct real photography from the earlier build pass — no changes needed.
+
+## Still open
+
+- **Video embeds** — no video is used anywhere on the site yet (it's fully photo-based by design); the 72 downloaded clips aren't matched to specific pages beyond the 8 originally tied to the founder Biographie page by timing. Before embedding any, they need to be previewed (no `ffmpeg`/`ffprobe` available in this environment to inspect them locally) and matched to the right page — a deliberate next step, not done blindly.
 
 ## What this pass added on top of the existing work
 
@@ -23,7 +32,3 @@ Status: **largely complete** (2026-09-06). Between an earlier round of work alre
 - Thérapies Naturelles, Gélothérapie, Grounding — no unique copy beyond what's already in the Pôle I tag list / dedicated Grounding page.
 - "Nos Domaines d'Action" and "BMT Company" as standalone partner cards — no unique copy on the old site beyond what's already reflected via team roles in `equipe.html`.
 - "RSE" (distinct from "RSE/QVT — Happy Art") — old site's RSE menu item was just a link-through to the ODD content, already covered by `engagement/objectifs-developpement-durable.html`.
-
-## Still open (lower priority)
-
-- **Videos** — only 8 of the old site's ~70+ b-roll clips were captured (`content-import/video/`). None are embedded on the current site (photography was used instead). Getting more requires opening each old-site page, playing its video once, and grabbing the `.mp4` URL from the Network tab (`https://bmtgreenacademy.com/_assets/video/<hash>.mp4`, all public). This is a bigger, separate design decision (whether/how to add video at all) rather than a content-parity gap.
