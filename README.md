@@ -39,7 +39,8 @@ Site officiel de BMT Green Academy — académie internationale fondée à Abidj
 │   ├── sport-etudes.html         # Sport-Études (FIRBALL)
 │   ├── roll-ball-enfants.html
 │   ├── roll-ball-femmes.html
-│   └── roll-ball-hommes.html
+│   ├── roll-ball-hommes.html
+│   └── roll-ball-handi.html
 ├── univers/
 │   └── therapixel-afrika.html    # Thérapixel Afrika®
 ├── assets/
@@ -76,6 +77,15 @@ Site officiel de BMT Green Academy — académie internationale fondée à Abidj
 - CSS3 (variables, grilles, animations, View Transitions API)
 - JavaScript vanilla (aucune dépendance)
 - Google Fonts (Baloo 2 + Nunito)
+
+## Déploiement
+
+Site statique, sans backend. Déployé via **GitHub Pages** depuis la branche `main` (source: `/`) :
+**https://xtruck149.github.io/bmtacademy/**
+
+⚠️ Le nom de domaine **bmtgreenacademy.com** pointe actuellement vers un site différent (l'ancienne version) et **n'est pas connecté à ce dépôt**. Tant qu'aucun fichier `CNAME` n'est ajouté ici et que le DNS du domaine n'est pas repointé vers GitHub Pages, les mises à jour de ce dépôt ne seront visibles qu'à l'adresse `xtruck149.github.io/bmtacademy/`, jamais sur `bmtgreenacademy.com`.
+
+Pour prévisualiser en local sans dépendance : `python -m http.server 8000` (voir `.claude/launch.json`) ou tout autre serveur statique — aucune étape de build n'est nécessaire.
 
 ## Accréditation
 
