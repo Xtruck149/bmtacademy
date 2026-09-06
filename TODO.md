@@ -15,6 +15,13 @@ Toutes les tâches des Groupes 1 à 4 d'une spécification produit sont maintena
 
 **Bug découvert et corrigé pendant cette passe** : `.hero--photo::before` (le gradient sombre garantissant la lisibilité du texte sur les photos) et `.hero::before` (le filigrane du logo, appliqué à tous les hero) ciblaient le même pseudo-élément avec une spécificité CSS égale — le filigrane, déclaré plus bas dans la feuille de style, gagnait systématiquement, laissant les 25 pages à photo de fond totalement non assombries avec du texte blanc illisible par-dessus. Corrigé en déplaçant le gradient sur `::after` ; le logo reste centré et discret sur les hero à couleur plate, et devient un vrai badge `<img>` net et bien présenté à droite sur les hero à photo.
 
+## Audit technique (2026-09-06)
+
+- [x] **`sitemap.xml` incomplet** — manquait les 4 pages du Groupe 4 (quiz, badge, vérification, FAQ). Ajouté.
+- [x] **`faq.html`** — le champ de recherche référençait une classe CSS jamais définie (`form-group-input`) avec des styles inline dupliqués. Nettoyé pour réutiliser `.form-group`.
+- [x] **Canonical / `og:url` / `og:image` / JSON-LD `url` pointaient vers `bmtgreenacademy.com`** (domaine non connecté à ce dépôt, voir "Still open" ci-dessous) sur les 34 pages + `sitemap.xml` + `robots.txt`. Repointés vers `https://xtruck149.github.io/bmtacademy` — l'adresse où le site est réellement servi — sur demande explicite de l'utilisateur. Si le domaine `bmtgreenacademy.com` est un jour connecté à ce dépôt (CNAME + DNS), ces URLs devront être repointées une seconde fois.
+- Vérifié sans problème : 0 lien/asset cassé (href/src/srcset/url()) sur 36 pages HTML, tous les JSON et JSON-LD valides, aucune image sans `alt`, aucun sélecteur CSS dupliqué au niveau racine, empilement des pseudo-éléments hero cohérent, aucun script temporaire oublié dans `content-import/`.
+
 ## Placeholders à remplacer avant mise en production
 
 - **Réseaux sociaux** — `https://instagram.com/bmtgreenacademy` et `https://facebook.com/bmtgreenacademy` dans tous les footers + JSON-LD sont des URLs d'exemple, à remplacer par les vrais comptes.
