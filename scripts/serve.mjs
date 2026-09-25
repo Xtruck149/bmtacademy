@@ -1,11 +1,14 @@
 // Serveur statique minimal pour prévisualiser le site en local (aucune dépendance).
-// Usage : npm run serve  →  http://localhost:8000/
+// Reproduit GitHub Pages : le site est servi sous /bmtacademy/ (indispensable pour
+// 404.html et offline.html qui utilisent <base href="/bmtacademy/">).
+// Usage : npm run serve  →  http://localhost:8000/bmtacademy/
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, resolve } from 'node:path';
 
 const ROOT = resolve('.');
 const PORT = Number(process.env.PORT) || 8000;
+const BASE = '/bmtacademy/';
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8',
@@ -16,8 +19,9 @@ const TYPES = {
 };
 
 createServer(async (req, res) => {
-  let path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-  let file = normalize(join(ROOT, path));
+  const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  if (!path.startsWith(BASE)) { res.writeHead(302, { Location: BASE }).end(); return; }
+  let file = normalize(join(ROOT, path.slice(BASE.length)));
   if (!file.startsWith(ROOT)) { res.writeHead(403).end(); return; }
   try {
     if ((await stat(file)).isDirectory()) file = join(file, 'index.html');
@@ -28,4 +32,4 @@ createServer(async (req, res) => {
     res.writeHead(404, { 'Content-Type': TYPES['.html'] });
     res.end(await readFile(join(ROOT, '404.html')).catch(() => 'Not found'));
   }
-}).listen(PORT, () => console.log(`BMT Green Academy → http://localhost:${PORT}/`));
+}).listen(PORT, () => console.log(`BMT Green Academy → http://localhost:${PORT}${BASE}`));

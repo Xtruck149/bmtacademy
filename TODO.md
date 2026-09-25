@@ -2,6 +2,17 @@
 
 Status: **largely complete** (2026-09-06). Between an earlier round of work already on `main` (37 commits — full nav restructuring, real photography under `assets/img/`, and dedicated pages for nearly everything on this list) and this pass, almost everything from the original audit is now built. Full extracted copy and **every** photo and video from the old live site are staged under [`content-import/`](content-import) for reference (gitignored raw media: `content-import/media/` — **1,710 images, 409MB** — and `content-import/video/` — **72 clips, 627MB** — pulled straight from the old site's own asset manifest, so this is the complete set, not a sample).
 
+## Audit + setup professionnel (2026-09-25, branche `chore/audit-setup-ameliorations`)
+
+- [x] **Outillage** — `package.json` (serve, lint HTML/CSS/JS, `check:links`, `test`), CI GitHub Actions `qualite.yml`, Dependabot, `.editorconfig`, `.gitattributes`, modèle de PR. Tout passe au vert.
+- [x] **Accessibilité** — aucune page n'avait de `<main>` : ajouté sur les 35 pages (le lien d'évitement déplace aussi le focus) ; nav principale et fil d'Ariane nommés, `aria-current` ; menu mobile fermable par Échap avec retour du focus ; défilement doux désactivé si `prefers-reduced-motion` ; contraste du bandeau CTA corrigé (3,85:1 → 5,8:1).
+- [x] **SEO** — JSON-LD `BreadcrumbList` (33 pages) et `Course` (14 programmes) ; `theme-color` aligné sur le vert de marque ; 404 : meta description.
+- [x] **Bug 404** — GitHub Pages sert `404.html` pour toute URL introuvable, à n'importe quelle profondeur : sur `/bmtacademy/programmes/xyz.html` la page s'affichait sans CSS ni images. Corrigé par `<base href="/bmtacademy/">`.
+- [x] **Service Worker** — l'ancien *cache-first* figeait `style.css`/`main.js` chez les visiteurs réguliers jusqu'au renommage du cache ; passé en *stale-while-revalidate*. Ajout du pré-cache, de `offline.html`, plafond du cache images, exclusion vidéo/Range.
+- [x] **Performance** — `@import` Google Fonts en doublon du `<link>` supprimé ; vidéo de présentation ré-encodée 43 Mo → 23 Mo (SSIM 0,989, visuellement identique), `preload="none"` + affiche.
+- [x] **Confidentialité** — `certificats.json` publiait en clair les noms des diplômés : remplacé par un index chiffré (AES-GCM + PBKDF2) généré depuis un CSV privé gitignoré (`npm run certificats:build`). Échappement HTML des données JSON injectées (sessions, diaspora, certificats).
+- [ ] **Reste à faire (non bloquant)** — hiérarchie des titres : de nombreuses cartes passent de `<h2>` à `<h4>` (saut de niveau signalé par Lighthouse) ; à corriger page par page avec l'ajustement CSS correspondant. Numéros de certificats : ajouter un suffixe aléatoire aux prochains.
+
 ## Groupe 1-4 — Fonctionnalités statiques (nouvelle passe, 2026-09-06)
 
 Toutes les tâches des Groupes 1 à 4 d'une spécification produit sont maintenant en place, 100% statiques (aucun backend), commitées par groupe atomique :
