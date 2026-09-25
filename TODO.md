@@ -9,7 +9,8 @@ Status: **largely complete** (2026-09-06). Between an earlier round of work alre
 - [x] Accueil reconstruit d'après la maquette validée : programmes phares avec prix, 9 pôles pictographiés, parcours en 4 étapes, fondatrice, engagements, **formulaire de pré-inscription → WhatsApp**, aperçu FAQ.
 - [x] Conversion : bouton « Candidater » dans l'en-tête de toutes les pages, barre d'action collante WhatsApp + Candidater sur mobile.
 - [x] Illustrations originales (SVG) : rameaux botaniques or/vert, motif feuillage, frise géométrique d'inspiration africaine au-dessus de chaque pied de page, 9 pictogrammes de pôles.
-- [ ] **Photos à fournir** : portrait professionnel de la fondatrice (emplacement `TODO` dans `index.html`), photos réelles de cérémonies / remises de certificats / ateliers. Les banques d'images libres ne sont pas accessibles depuis l'environnement de travail.
+- [x] Portrait de la fondatrice intégré (accueil, Qui sommes-nous, JSON-LD) — `assets/img/fondatrice.{jpg,webp}`.
+- [ ] **Photos à fournir** : photos réelles de cérémonies / remises de certificats / ateliers. Les banques d'images libres ne sont pas accessibles depuis l'environnement de travail.
 
 ## Audit + setup professionnel (2026-09-25, branche `chore/audit-setup-ameliorations`)
 
