@@ -10,7 +10,8 @@
 <link rel="icon" href="../assets/img/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../assets/site.webmanifest">
-<meta name="theme-color" content="#1DB876">
+<meta name="theme-color" content="#0E4D38">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nos 17 Objectifs de Développement Durable | BMT Green Academy">
 <meta property="og:description" content="BMT Green Academy et la sensibilisation aux 17 Objectifs de Développement Durable — une lecture en termes de leadership, pour la conscience planétaire et la résilience écologique en Côte d'Ivoire.">
@@ -28,15 +29,41 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap">
 <link rel="stylesheet" href="../assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://xtruck149.github.io/bmtacademy/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Qui sommes-nous",
+      "item": "https://xtruck149.github.io/bmtacademy/a-propos.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Nos 17 Objectifs de Développement Durable",
+      "item": "https://xtruck149.github.io/bmtacademy/engagement/objectifs-developpement-durable.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
 <header class="site-header">
-  <nav class="nav">
+  <nav class="nav" aria-label="Navigation principale">
     <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt="BMT Green Academy" class="logo-mark" width="62" height="60"><span class="logo-text">BMT <span>Green</span> Academy</span></a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li class="nav-drawer-logo"><img src="../assets/img/logo.png" alt="BMT Green Academy" width="90" height="87" loading="lazy"></li>
       <li class="nav-dropdown">
         <a href="../formations/index.html">Formations</a>
@@ -70,21 +97,23 @@
       </li>
     </ul>
     <div class="nav-cta"><a href="https://wa.me/2250101736812?text=Bonjour%20%C3%A9quipe%20BMT%20Green%20Academy%2C%20je%20m%27int%C3%A9resse%20aux%20formations." class="btn btn-primary btn-sm">Nous contacter</a></div>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" type="button" aria-controls="nav-links" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
+<main id="main-content">
+
 <div class="wrap">
-  <div class="breadcrumbs">
+  <nav class="breadcrumbs" aria-label="Fil d'Ariane">
     <a href="../index.html">Accueil</a>
     <span class="sep">/</span>
     <a href="../a-propos.html">Qui sommes-nous</a>
     <span class="sep">/</span>
-    <span class="current">Nos 17 Objectifs de Développement Durable</span>
-  </div>
+    <span class="current" aria-current="page">Nos 17 Objectifs de Développement Durable</span>
+  </nav>
 </div>
 
-<section id="main-content" class="hero hero--warm hero--short hero--photo" style="background-image:url('../assets/img/engagement/objectifs-developpement-durable-hero.jpg');background-image:-webkit-image-set(url('../assets/img/engagement/objectifs-developpement-durable-hero.webp') type('image/webp'), url('../assets/img/engagement/objectifs-developpement-durable-hero.jpg') type('image/jpeg'));background-image:image-set(url('../assets/img/engagement/objectifs-developpement-durable-hero.webp') type('image/webp'), url('../assets/img/engagement/objectifs-developpement-durable-hero.jpg') type('image/jpeg'))">
+<section class="hero hero--warm hero--short hero--photo" style="background-image:url('../assets/img/engagement/objectifs-developpement-durable-hero.jpg');background-image:-webkit-image-set(url('../assets/img/engagement/objectifs-developpement-durable-hero.webp') type('image/webp'), url('../assets/img/engagement/objectifs-developpement-durable-hero.jpg') type('image/jpeg'));background-image:image-set(url('../assets/img/engagement/objectifs-developpement-durable-hero.webp') type('image/webp'), url('../assets/img/engagement/objectifs-developpement-durable-hero.jpg') type('image/jpeg'))">
   <img src="../assets/img/logo.png" alt="" aria-hidden="true" class="hero-logo-badge">
   <div class="wrap hero-inner">
     <span class="eyebrow">Engagement — Conscience planétaire</span>
@@ -245,6 +274,8 @@
 </section>
 
 <div class="nav-mobile-overlay"></div>
+</main>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
