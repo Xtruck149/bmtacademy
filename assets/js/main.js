@@ -19,14 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.querySelector('.nav-mobile-overlay');
 
   function closeNav() {
-    if (navLinks) navLinks.classList.remove('open');
-    if (burger) burger.setAttribute('aria-expanded', 'false');
+    if (!navLinks || !navLinks.classList.contains('open')) return;
+    navLinks.classList.remove('open');
+    if (burger) { burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); }
     if (overlay) overlay.classList.remove('visible');
     document.body.style.overflow = '';
   }
   function openNav() {
     if (navLinks) navLinks.classList.add('open');
-    if (burger) burger.setAttribute('aria-expanded', 'true');
+    if (burger) { burger.setAttribute('aria-expanded', 'true'); burger.setAttribute('aria-label', 'Fermer le menu'); }
     if (overlay) { overlay.classList.add('visible'); overlay.style.display = 'block'; }
     document.body.style.overflow = 'hidden';
   }
@@ -38,6 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   if (overlay) overlay.addEventListener('click', closeNav);
+  // Échap ferme le menu mobile et rend le focus au bouton (clavier / lecteurs d'écran)
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
+      closeNav();
+      if (burger) burger.focus();
+    }
+  });
   if (navLinks) {
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
   }
@@ -62,17 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
   toTop.className = 'to-top';
   toTop.setAttribute('aria-label', 'Retour en haut');
   toTop.innerHTML = '&#8593;';
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  toTop.type = 'button';
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: scrollBehavior }));
   document.body.appendChild(toTop);
 
   const onScroll = () => {
     const h = document.documentElement;
-    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
     progress.style.width = pct + '%';
     toTop.classList.toggle('visible', h.scrollTop > 600);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
   /* ---- Smooth scroll for anchor links ---- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -83,8 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (target) {
         e.preventDefault();
         const headerH = header ? header.offsetHeight : 0;
-        const top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 20;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const top = target.getBoundingClientRect().top + window.scrollY - headerH - 20;
+        window.scrollTo({ top, behavior: scrollBehavior });
+        // Déplace aussi le focus clavier (sinon le lien d'évitement ne sert qu'aux yeux)
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
       }
     });
   });
@@ -195,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const timer = setInterval(() => {
             current += step;
             if (current >= target) { current = target; clearInterval(timer); }
-            el.textContent = prefix + current.toLocaleString() + suffix;
+            el.textContent = prefix + current.toLocaleString('fr-FR') + suffix;
           }, 20);
           cio.unobserve(el);
         }
@@ -214,14 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = contactForm.subject.value;
       const message = contactForm.message.value.trim();
       const text = `Bonjour \u00e9quipe BMT Green Academy,\n\nNom : ${name}\nEmail : ${email}\nSujet : ${subject}\n\n${message}`;
-      window.open('https://wa.me/2250101736812?text=' + encodeURIComponent(text), '_blank');
+      window.open('https://wa.me/2250101736812?text=' + encodeURIComponent(text), '_blank', 'noopener');
     });
   }
 
   /* ---- Magnetic tilt on elevated cards (fine pointer + motion allowed only) ---- */
   const finePointer = window.matchMedia('(pointer: fine)').matches;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (finePointer && !reducedMotion) {
+  if (finePointer && !prefersReducedMotion) {
     document.querySelectorAll('.card--elevated, .formation-card, .founder-card').forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();

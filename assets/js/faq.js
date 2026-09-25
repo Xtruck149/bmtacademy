@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 
   function normalize(str) {
-    return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
   input.addEventListener('input', () => {

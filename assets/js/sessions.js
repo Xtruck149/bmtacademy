@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('sessions-grid');
   if (!grid) return;
 
+  // Échappement HTML : le JSON est édité à la main, une apostrophe ou un < ne doit rien casser.
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const MONTHS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 
   function formatDate(iso) {
@@ -27,9 +29,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="card card--bordered">
           <div class="card-body">
             <span class="tag ${badgeClass}">${badgeText}</span>
-            <h4 class="mt-md">${s.formation}</h4>
+            <h4 class="mt-md">${esc(s.formation)}</h4>
             <p>${formatDate(s.date)}</p>
-            <p class="form-note">${s.lieu}</p>
+            <p class="form-note">${esc(s.lieu)}</p>
           </div>
         </div>
       `;

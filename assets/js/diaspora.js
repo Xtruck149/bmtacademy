@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const group = document.getElementById('diaspora-points');
   const detail = document.getElementById('diaspora-detail');
   const svgNS = 'http://www.w3.org/2000/svg';
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   function showDetail(point) {
     detail.innerHTML = `
-      <h4>${point.ville}</h4>
-      <p>${point.pays}</p>
-      <p class="diaspora-count">${point.etudiants} étudiants &amp; alumni</p>
+      <h4>${esc(point.ville)}</h4>
+      <p>${esc(point.pays)}</p>
+      <p class="diaspora-count">${esc(point.etudiants)} étudiants &amp; alumni</p>
       <p class="form-note">Donnée d'exemple — à remplacer par le chiffre réel.</p>
     `;
   }
