@@ -16,11 +16,11 @@
     "test": "npm run lint && npm run check:links"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
-    "eslint": "^9.0.0",
-    "globals": "^16.0.0",
-    "html-validate": "^9.0.0",
-    "stylelint": "^16.0.0",
-    "stylelint-config-standard": "^38.0.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "html-validate": "^11.16.0",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }
