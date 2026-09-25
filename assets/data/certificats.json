@@ -1,26 +1,24 @@
 {
-  "_lisezmoi": "Fichier statique servant de base de vérification pour verification.html. Pour ajouter un certificat réel, ajoutez un objet {\"numero\", \"nom\", \"formation\", \"annee\"} au tableau 'certificats' ci-dessous. Aucune base de données n'est utilisée : ce fichier JSON est lu directement par le navigateur.",
-  "certificats": [
-    {
-      "numero": "AATHCI-BMTGA-2025-0001",
-      "nom": "Exemple Fictif — Prénom Nom",
-      "formation": "L'Art de la Paix",
-      "annee": "2025",
-      "_placeholder": true
+  "_lisezmoi": "Fichier GÉNÉRÉ par scripts/build-certificats.mjs — ne pas éditer à la main. Chaque entrée est chiffrée avec une clé dérivée du numéro de certificat : aucun nom n’est lisible sans connaître le numéro.",
+  "version": 2,
+  "kdf": {
+    "name": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 200000,
+    "salt": "xYC4D5vRuhchIwI30qEvHg=="
+  },
+  "entries": {
+    "678726a20fce473052bb29f7f4815454d1a879a9bf669b13aeacc41cbb647b8a": {
+      "iv": "yEggVxNsbwPwmAu/",
+      "data": "IT/1bgwMT6q8vMoMh23EJ+2tbcRoLx2kvbnjAQxPAXzkDzQlS5KBGjJkvpdP28Vr7YLqVzTIZrQRvGvngdZKHN4SxPoHCITD2MpkeONpzzeIPOPELKg0bo6hRcJbZ+qfyQeaJTMKhiNvfN94eXvNudYUBlW5+q+bcMMyt+5ZLR2yqet3dq3wwg=="
     },
-    {
-      "numero": "AATHCI-BMTGA-2025-0002",
-      "nom": "Exemple Fictif — Prénom Nom",
-      "formation": "Musicothérapie",
-      "annee": "2025",
-      "_placeholder": true
+    "280f004de60edac86269751b49758b106159a372a1541217be7cfc67982ef9dd": {
+      "iv": "jzYYlsSGai7hWxx5",
+      "data": "H69hgo/d0nBVYLusrv5eExQxrtIBXSOgp8Ami/P24svp2jZneQyaw7AGZAj8Th+D77NBFpszIKbNTgfdwPyn7XdRTPMytsKEesJS0CsJXBlO9/wg9XR9Xw7hpvHzJy7qXUPxzRBsPouRaj38tjsTWR9BTslD/xKolDYFvurj10SqdF0rn+xj"
     },
-    {
-      "numero": "AATHCI-BMTGA-2024-0147",
-      "nom": "Exemple Fictif — Prénom Nom",
-      "formation": "Parcours étudiant complet",
-      "annee": "2024",
-      "_placeholder": true
+    "96ac61a016106df6e86f62a061cbc8919d0310cabcc625c8b1b1eb178263d32d": {
+      "iv": "qM4U2rYkAqlOuW8m",
+      "data": "ABMOWCOaCbw7XZasO8Vyt+WvSBl4PeLOPFf+x0vL5vugAFL6ccImLyxLnwJpqeUJPKArZNWCwwjOTeOi0VxFvZPAJqREGsfnINUfJdbtUywAbozf2x9qo17KsqZ64I1WY0kMd0OXNjvpI5WXrdrWWMjaKD1/ba27fjIXZtsgnmcu59Jtu+UXiiDuuxfauK3EYPA="
     }
-  ]
+  }
 }
