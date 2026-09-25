@@ -234,6 +234,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---- Pré-inscription (accueil) : message WhatsApp pré-rempli ---- */
+  const applyForm = document.getElementById('apply-form');
+  if (applyForm) {
+    applyForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nom = applyForm.nom.value.trim();
+      const tel = applyForm.whatsapp.value.trim();
+      if (!nom || !tel) {
+        (nom ? applyForm.whatsapp : applyForm.nom).focus();
+        applyForm.querySelectorAll('[required]').forEach(f => f.setAttribute('aria-invalid', String(!f.value.trim())));
+        return;
+      }
+      const lignes = [
+        'Bonjour \u00e9quipe BMT Green Academy,',
+        '',
+        'Je souhaite me pr\u00e9-inscrire.',
+        `Nom : ${nom}`,
+        `WhatsApp : ${tel}`,
+        `Pays : ${applyForm.pays.value.trim() || '\u2014'}`,
+        `Formation : ${applyForm.formation.value}`,
+      ];
+      const msg = applyForm.message.value.trim();
+      if (msg) lignes.push('', msg);
+      window.open('https://wa.me/2250101736812?text=' + encodeURIComponent(lignes.join('\n')), '_blank', 'noopener');
+    });
+  }
+
+  /* ---- Prochaine rentrée (accueil) : n'affiche qu'une date réelle (non placeholder) ---- */
+  const nextDate = document.getElementById('home-next-date');
+  if (nextDate) {
+    fetch('assets/data/sessions.json')
+      .then(r => r.json())
+      .then(data => {
+        const today = new Date().toISOString().slice(0, 10);
+        const next = (data.sessions || []).filter(s => !s.placeholder && s.date >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
+        if (next) {
+          nextDate.textContent = new Date(next.date + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+      })
+      .catch(() => {});
+  }
+
   /* ---- Magnetic tilt on elevated cards (fine pointer + motion allowed only) ---- */
   const finePointer = window.matchMedia('(pointer: fine)').matches;
   if (finePointer && !prefersReducedMotion) {

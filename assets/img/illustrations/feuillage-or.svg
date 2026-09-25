@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#D9B56E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Rameau botanique original — BMT Green Academy -->
+  <path d="M60 360 C130 300 190 230 230 150 C250 110 270 70 300 40"/>
+  <path d="M112 318 C88 292 70 262 66 226 C98 236 124 262 136 296"/>
+  <path d="M112 318 C112 290 104 266 92 244"/>
+  <path d="M148 284 C176 272 206 252 226 226 C192 220 164 238 148 270"/>
+  <path d="M152 278 C176 262 196 248 214 232"/>
+  <path d="M172 252 C150 226 138 196 140 162 C168 176 186 204 190 236"/>
+  <path d="M176 246 C170 220 162 198 150 180"/>
+  <path d="M206 204 C232 196 262 176 282 150 C248 144 222 162 206 192"/>
+  <path d="M210 198 C232 184 250 170 268 156"/>
+  <path d="M224 170 C206 144 198 112 204 80 C230 98 242 126 242 158"/>
+  <path d="M228 164 C224 138 218 116 208 98"/>
+  <path d="M258 110 C284 106 310 92 330 70 C300 62 276 76 262 100"/>
+  <path d="M262 104 C282 94 300 84 318 74"/>
+  <circle cx="300" cy="40" r="6" fill="#D9B56E" stroke="none"/>
+  <circle cx="318" cy="56" r="3.5" fill="#D9B56E" stroke="none"/>
+  <circle cx="286" cy="30" r="3" fill="#D9B56E" stroke="none"/>
+</svg>

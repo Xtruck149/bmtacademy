@@ -2,6 +2,15 @@
 
 Status: **largely complete** (2026-09-06). Between an earlier round of work already on `main` (37 commits — full nav restructuring, real photography under `assets/img/`, and dedicated pages for nearly everything on this list) and this pass, almost everything from the original audit is now built. Full extracted copy and **every** photo and video from the old live site are staged under [`content-import/`](content-import) for reference (gitignored raw media: `content-import/media/` — **1,710 images, 409MB** — and `content-import/video/` — **72 clips, 627MB** — pulled straight from the old site's own asset manifest, so this is the complete set, not a sample).
 
+## Refonte premium v5 « Académie » (2026-09-25)
+
+- [x] Nouveau système visuel (`style.css` réécrit, classes conservées) : ivoire / vert forêt / or, Fraunces + Manrope, ombres douces, filets fins — appliqué aux 36 pages.
+- [x] **Logo en grand partout** : en-tête (104 px, se rétracte à 60 px au défilement), médaillon de 150–260 px dans chaque hero (au-dessus du titre sur mobile), 150 px en tête du menu mobile, 128 px dans le pied de page, filigrane dans les bandeaux d'appel, emblème sur la 404.
+- [x] Accueil reconstruit d'après la maquette validée : programmes phares avec prix, 9 pôles pictographiés, parcours en 4 étapes, fondatrice, engagements, **formulaire de pré-inscription → WhatsApp**, aperçu FAQ.
+- [x] Conversion : bouton « Candidater » dans l'en-tête de toutes les pages, barre d'action collante WhatsApp + Candidater sur mobile.
+- [x] Illustrations originales (SVG) : rameaux botaniques or/vert, motif feuillage, frise géométrique d'inspiration africaine au-dessus de chaque pied de page, 9 pictogrammes de pôles.
+- [ ] **Photos à fournir** : portrait professionnel de la fondatrice (emplacement `TODO` dans `index.html`), photos réelles de cérémonies / remises de certificats / ateliers. Les banques d'images libres ne sont pas accessibles depuis l'environnement de travail.
+
 ## Audit + setup professionnel (2026-09-25, branche `chore/audit-setup-ameliorations`)
 
 - [x] **Outillage** — `package.json` (serve, lint HTML/CSS/JS, `check:links`, `test`), CI GitHub Actions `qualite.yml`, Dependabot, `.editorconfig`, `.gitattributes`, modèle de PR. Tout passe au vert.
