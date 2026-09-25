@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const BRAND_GREEN = '#0E4D38';
   const GOLD = '#B98A3D';
-  const INK = '#142016';
 
   function wrapText(text, maxWidth) {
     const words = text.split(' ');

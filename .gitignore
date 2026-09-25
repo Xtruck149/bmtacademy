@@ -2,3 +2,15 @@
 # Pick what you need from here and move it into assets/img/ or assets/video/ as you build each page.
 content-import/media/
 content-import/video/
+
+# Outillage Node (dev uniquement, jamais publié)
+node_modules/
+npm-debug.log*
+
+# Source privée des certificats (noms des diplômés) — ne JAMAIS committer.
+# Le fichier public chiffré assets/data/certificats.json est généré à partir d'elle.
+private/
+
+# Divers
+.DS_Store
+Thumbs.db
