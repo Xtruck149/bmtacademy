@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Servie par le Service Worker à la place de n'importe quelle page quand le réseau est
+     indisponible : <base> garantit que les chemins relatifs partent de la racine du site. -->
+<base href="/bmtacademy/">
+<title>Hors connexion — BMT Green Academy</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Vous êtes hors connexion. Les pages déjà consultées restent disponibles.">
+<meta name="theme-color" content="#0E4D38">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<main id="main-content">
+<section class="error-page" style="min-height:100vh">
+  <div class="wrap max-w-md">
+    <img src="assets/img/logo.png" alt="BMT Green Academy" width="90" height="87" class="mb-lg" style="display:block;margin-inline:auto">
+    <span class="eyebrow eyebrow--light justify-center">Hors connexion</span>
+    <h1>Pas de réseau</h1>
+    <p class="mt-lg mb-2xl max-w-sm text-center text-white-muted">Cette page n'a pas encore été enregistrée sur votre appareil. Les pages que vous avez déjà consultées restent accessibles hors ligne.</p>
+    <div class="hero-actions justify-center">
+      <button type="button" class="btn btn-primary" id="offline-retry">Réessayer</button>
+      <a href="index.html" class="btn btn-outline">Accueil</a>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+  document.getElementById('offline-retry').addEventListener('click', () => location.reload());
+  window.addEventListener('online', () => location.reload());
+</script>
+</body>
+</html>
