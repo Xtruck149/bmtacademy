@@ -309,27 +309,88 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---- Visionneuse des galeries (<dialog> natif). Sans JS, le lien ouvre simplement l'image. ---- */
-  const lbLinks = document.querySelectorAll('a[data-lightbox]');
+  /* ---- Visionneuse des galeries (<dialog> natif) : flèches, clavier, glisser, compteur.
+     Sans JavaScript, chaque vignette ouvre simplement l'image en grand. ---- */
+  const lbLinks = [...document.querySelectorAll('a[data-lightbox]')];
   if (lbLinks.length && typeof HTMLDialogElement === 'function') {
     const dlg = document.createElement('dialog');
     dlg.className = 'lightbox';
-    dlg.setAttribute('aria-label', 'Image agrandie');
-    dlg.innerHTML = '<button type="button" class="lightbox-close" aria-label="Fermer">&times;</button><img alt=""><p></p>';
+    dlg.setAttribute('closedby', 'any');
+    dlg.setAttribute('aria-label', 'Visionneuse d’images');
+    dlg.innerHTML = '<button type="button" class="lightbox-close" aria-label="Fermer">&times;</button>'
+      + '<button type="button" class="lightbox-nav prev" aria-label="Image précédente">&#8249;</button>'
+      + '<button type="button" class="lightbox-nav next" aria-label="Image suivante">&#8250;</button>'
+      + '<img alt=""><p><span class="cap"></span><span class="count"></span></p>';
     document.body.appendChild(dlg);
     const img = dlg.querySelector('img');
-    const cap = dlg.querySelector('p');
-    dlg.querySelector('.lightbox-close').addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-    lbLinks.forEach(a => a.addEventListener('click', e => {
-      e.preventDefault();
+    const cap = dlg.querySelector('.cap');
+    const count = dlg.querySelector('.count');
+    let group = [];
+    let idx = 0;
+    const show = (i) => {
+      idx = (i + group.length) % group.length;
+      const a = group[idx];
       const thumb = a.querySelector('img');
       img.src = a.href;
       img.alt = thumb ? thumb.alt : '';
       cap.textContent = thumb ? thumb.alt : '';
+      count.textContent = group.length > 1 ? `${idx + 1} / ${group.length}` : '';
+      dlg.querySelectorAll('.lightbox-nav').forEach((b) => { b.hidden = group.length < 2; });
+      const next = group[(idx + 1) % group.length];
+      if (next) new Image().src = next.href; // préchargement de l'image suivante
+    };
+    dlg.querySelector('.lightbox-close').addEventListener('click', () => dlg.close());
+    dlg.querySelector('.prev').addEventListener('click', () => show(idx - 1));
+    dlg.querySelector('.next').addEventListener('click', () => show(idx + 1));
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    // Glisser (mobile)
+    let x0 = null;
+    img.addEventListener('pointerdown', (e) => { x0 = e.clientX; });
+    img.addEventListener('pointerup', (e) => {
+      if (x0 === null) return;
+      const dx = e.clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    });
+    // Repli « clic sur le fond » pour les navigateurs sans l'attribut closedby
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    }
+    lbLinks.forEach((a) => a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const scope = a.closest('.gallery-grid, section') || document;
+      group = lbLinks.filter((l) => scope.contains(l));
+      show(group.indexOf(a));
       dlg.showModal();
     }));
   }
+
+  /* ---- Filtre instantané d'une liste (ex. glossaire) ---- */
+  document.querySelectorAll('[data-filter-input]').forEach((input) => {
+    const scope = document.querySelector(input.dataset.filterInput) || document;
+    const items = [...scope.querySelectorAll('[data-filter-item]')];
+    const counter = input.parentElement.querySelector('[data-filter-count]');
+    const norm = (t) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const texts = items.map((it) => norm(it.textContent));
+    const run = () => {
+      const terms = norm(input.value.trim()).split(/\s+/).filter(Boolean);
+      let n = 0;
+      items.forEach((it, i) => {
+        const ok = terms.every((t) => texts[i].includes(t));
+        it.hidden = !ok;
+        if (ok) n++;
+      });
+      scope.querySelectorAll('section').forEach((sec) => {
+        const has = sec.querySelector('[data-filter-item]:not([hidden])');
+        sec.hidden = !has && sec.querySelector('[data-filter-item]') !== null;
+      });
+      if (counter) counter.textContent = terms.length ? `${n} matière${n > 1 ? 's' : ''} trouvée${n > 1 ? 's' : ''}` : '';
+    };
+    input.addEventListener('input', run);
+  });
 
   /* ---- Footer copyright year (never needs manual updating again) ---- */
   const copyrightYear = document.getElementById('copyright-year');

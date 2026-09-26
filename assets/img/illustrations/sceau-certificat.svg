@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="t"><title id="t">Sceau de certification</title>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1D9A4"/><stop offset=".5" stop-color="#C9A45C"/><stop offset="1" stop-color="#8C6A2E"/></linearGradient></defs>
+<path d="M118 220 100 304l28-16 18 28 16-80M202 220l18 84-28-16-18 28-16-80" fill="#0E4D38"/>
+<polygon points="160.0,36.0 172.0,48.8 186.9,39.5 195.2,55.0 212.0,49.9 216.0,67.0 233.5,66.5 233.0,84.0 250.1,88.0 245.0,104.8 260.5,113.1 251.2,128.0 264.0,140.0 251.2,152.0 260.5,166.9 245.0,175.2 250.1,192.0 233.0,196.0 233.5,213.5 216.0,213.0 212.0,230.1 195.2,225.0 186.9,240.5 172.0,231.2 160.0,244.0 148.0,231.2 133.1,240.5 124.8,225.0 108.0,230.1 104.0,213.0 86.5,213.5 87.0,196.0 69.9,192.0 75.0,175.2 59.5,166.9 68.8,152.0 56.0,140.0 68.8,128.0 59.5,113.1 75.0,104.8 69.9,88.0 87.0,84.0 86.5,66.5 104.0,67.0 108.0,49.9 124.8,55.0 133.1,39.5 148.0,48.8" fill="url(#g)"/>
+<circle cx="160" cy="140" r="84" fill="#0E4D38"/><circle cx="160" cy="140" r="74" fill="none" stroke="#E8C987" stroke-width="2" stroke-dasharray="3 6"/>
+<path d="M160 88c-18 16-26 32-24 50 12-2 20-9 24-18 4 9 12 16 24 18 2-18-6-34-24-50z" fill="#E8C987"/>
+<path d="M126 150c10 8 22 12 34 12s24-4 34-12M136 170h48" fill="none" stroke="#E8C987" stroke-width="4" stroke-linecap="round"/>
+<text x="160" y="196" text-anchor="middle" font-family="Georgia,serif" font-size="13" letter-spacing="3" fill="#F4EFE3">AATHCI</text>
+</svg>

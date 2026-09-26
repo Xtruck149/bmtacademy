@@ -144,3 +144,21 @@ AATHCI-BMTGA-IA-2025-CI-19 — Association des Arts Thérapeutes et Praticiens H
 - **Téléphone** : +225 01 01 73 68 12 / 07 77 77 62 00
 - **WhatsApp** : [Écrire sur WhatsApp](https://wa.me/2250101736812)
 - **Adresse** : Abidjan, Côte d'Ivoire
+## Crédits des images libres de droits
+
+Les photos de `assets/img/libre/` sont dans le domaine public (licence **CC0**), trouvées via [Openverse](https://openverse.org). Aucune attribution n'est obligatoire ; elles sont listées ici par transparence. Les illustrations de `assets/img/illustrations/` sont des créations originales du projet.
+
+| Fichier | Sujet | Source |
+|---|---|---|
+| `libre/faq` | Early Education in Senegal | [U.S. Agency for International Development](https://www.rawpixel.com/image/4051328/early-education-senegal) — CC0 |
+| `libre/formations` | Integrated Reading Activity in Bamako | [U.S. Agency for International Development](https://www.rawpixel.com/image/4051311/image-public-domain-kid-person) — CC0 |
+| `libre/parcours` | Students joining HTML coding workshop | [U.S. Embassy South Africa](https://www.rawpixel.com/image/6485816/photo-image-public-domain-people-black) — CC0 |
+| `libre/quiz` | Sun Trees | [Matt Moloney](https://stocksnap.io/photo/sun-trees-BPWSN5EFQC) — CC0 |
+| `libre/glossaire` | Fresh Mint | [Nature Backgrounds](https://stocksnap.io/photo/fresh-mint-DFE5UNWO9J) — CC0 |
+| `libre/pole1` | Free home aroma image | [rawpixel](https://www.rawpixel.com/image/5921893/photo-image-flower-public-domain-white) — CC0 |
+| `libre/pole2` | child impaired eyesight practices writing | [The African Union Mission in Somalia](https://www.rawpixel.com/image/3373067/free-photo-image-classroom-african-cc0-computer) — CC0 |
+| `libre/pole3` | Amina Ali - 22 years | [The African Union Mission in Somalia](https://www.rawpixel.com/image/3373133/free-photo-image-africa-muslim-cc0) — CC0 |
+| `libre/pole4` | blanket, cotton, African (Ivory Coast) | [rawpixel](https://www.rawpixel.com/image/7656205/image-vintage-art-public-domain) — CC0 |
+| `libre/pole5` | U.S. Department of Agriculture (USDA) | [U.S. Department of Agriculture](https://www.rawpixel.com/image/3306659/free-photo-image-business-owner-agriculture-atlanta) — CC0 |
+| `libre/partenaires` | Work Business | [Matt Moloney](https://stocksnap.io/photo/work-business-WQ2JMRIIQB) — CC0 |
+| `libre/badge` | AWE Cohort 2 Graduation Ceremony | [usembassyghana](https://www.rawpixel.com/image/8714717/awe-cohort-graduation-ceremony) — CC0 |

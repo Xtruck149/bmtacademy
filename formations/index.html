@@ -17,14 +17,16 @@
 <meta property="og:url" content="https://xtruck149.github.io/bmtacademy/formations/index.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_CI">
-<meta property="og:image" content="https://xtruck149.github.io/bmtacademy/assets/img/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://xtruck149.github.io/bmtacademy/assets/img/libre/formations.jpg">
+<meta property="og:image:width" content="1300">
+<meta property="og:image:height" content="867">
+<meta property="og:image:alt" content="Formations">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://xtruck149.github.io/bmtacademy/assets/img/og-image.jpg">
+<meta name="twitter:image" content="https://xtruck149.github.io/bmtacademy/assets/img/libre/formations.jpg">
 <link rel="canonical" href="https://xtruck149.github.io/bmtacademy/formations/index.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- lcp:start --><link rel="preload" as="image" href="../assets/img/libre/formations.webp" type="image/webp" fetchpriority="high"><!-- lcp:end -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../assets/css/style.css">
 <script type="application/ld+json">
@@ -93,6 +95,7 @@
       </li>
     </ul>
     <button id="lang-toggle" type="button" class="btn btn-outline-dark btn-sm lang-toggle" aria-label="Switch to English">EN</button>
+    <button type="button" class="search-toggle" aria-label="Rechercher sur le site (Ctrl+K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="label">Rechercher</span><kbd>Ctrl K</kbd></button>
     <div class="nav-cta"><a href="../index.html#candidater" class="btn btn-primary btn-sm">Candidater</a></div>
     <button class="burger" type="button" aria-controls="nav-links" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -102,7 +105,7 @@
 
 <main id="main-content">
 
-<section class="hero hero--catalogue hero--short">
+<section class="hero hero--catalogue hero--short hero--photo" style="background-image:url('../assets/img/libre/formations.jpg');background-image:-webkit-image-set(url('../assets/img/libre/formations.webp') type('image/webp'), url('../assets/img/libre/formations.jpg') type('image/jpeg'));background-image:image-set(url('../assets/img/libre/formations.webp') type('image/webp'), url('../assets/img/libre/formations.jpg') type('image/jpeg'))">
   <img src="../assets/img/logo.png" alt="" aria-hidden="true" class="hero-logo-badge" width="260" height="260">
   <div class="wrap hero-inner">
     <nav class="breadcrumbs" aria-label="Fil d'Ariane">
@@ -623,6 +626,32 @@
   </div>
 </section>
 
+
+<!-- related:start -->
+<section class="related-section" aria-labelledby="related-title">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Continuer la découverte</span>
+      <h2 id="related-title">À explorer ensuite</h2>
+    </div>
+    <div class="related-grid">
+      <a class="related-card" href="glossaire.html">
+        <span class="related-thumb"><picture><source srcset="../assets/img/libre/glossaire.webp" type="image/webp"><img src="../assets/img/libre/glossaire.jpg" alt="" width="960" height="720" loading="lazy"></picture></span>
+        <span class="related-body"><span class="card-tag">Formations</span><span class="related-title">Glossaire des matières par pôle</span><span class="related-desc">Glossaire des 49 matières de BMT Green Academy, réparties en 5 pôles : définition, objectif pédagogique et code…</span></span>
+      </a>
+      <a class="related-card" href="parcours-etudiant.html">
+        <span class="related-thumb"><picture><source srcset="../assets/img/libre/parcours.webp" type="image/webp"><img src="../assets/img/libre/parcours.jpg" alt="" width="1300" height="867" loading="lazy"></picture></span>
+        <span class="related-body"><span class="card-tag">Formations</span><span class="related-title">Parcours étudiant</span><span class="related-desc">Modalités d&#x27;inscription et parcours étudiant à BMT Green Academy — formation en ligne, auto-évaluation, certification…</span></span>
+      </a>
+      <a class="related-card" href="trouve-ta-formation.html">
+        <span class="related-thumb"><picture><source srcset="../assets/img/libre/quiz.webp" type="image/webp"><img src="../assets/img/libre/quiz.jpg" alt="" width="960" height="640" loading="lazy"></picture></span>
+        <span class="related-body"><span class="card-tag">Formations</span><span class="related-title">Trouve ta formation</span><span class="related-desc">Répondez à 4 questions et découvrez les formations BMT Green Academy les plus adaptées à votre profil et à vos…</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- related:end -->
+
 <div class="nav-mobile-overlay"></div>
 
 </main>
@@ -691,6 +720,7 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+<script src="../assets/js/search.js" defer></script>
 <script src="../assets/js/sessions.js"></script>
 <script src="../assets/js/lang.js"></script>
 </body>

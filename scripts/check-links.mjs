@@ -89,6 +89,13 @@ for (const page of pages) {
   if (!NOT_IN_SITEMAP.has(rel) && !inSitemap.has(rel)) errors.push(`sitemap.xml → page absente : ${rel}`);
 }
 
+// Index de la recherche instantanée : chaque page du sitemap doit y figurer (sinon : npm run search:build)
+const indexFile = join(ROOT, 'assets/data/search-index.json');
+if (existsSync(indexFile)) {
+  const indexed = new Set(JSON.parse(readFileSync(indexFile, 'utf8')).map((e) => e.u.split('#')[0]));
+  for (const p of inSitemap) if (!indexed.has(p)) errors.push(`search-index.json → page absente : ${p} (lancer npm run search:build)`);
+}
+
 if (errors.length) {
   console.error(`✖ ${errors.length} problème(s) :\n  ` + errors.join('\n  '));
   process.exit(1);
