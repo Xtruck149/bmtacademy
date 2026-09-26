@@ -28,3 +28,7 @@ jobs:
       - run: npm run lint:css
       - run: npm run lint:js
       - run: npm run check:links
+      - name: Index de recherche à jour
+        run: |
+          npm run search:build
+          git diff --exit-code assets/data/search-index.json || { echo "::error::search-index.json est périmé : lancez npm run search:build et commitez"; exit 1; }

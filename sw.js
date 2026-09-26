@@ -16,7 +16,7 @@
    ⚠ Incrémentez CACHE_VERSION à chaque déploiement qui modifie la
    liste PRECACHE ou pour forcer une purge complète.
    ========================================================== */
-const CACHE_VERSION = 'v5';
+const CACHE_VERSION = 'v6';
 const PAGES = `bmt-pages-${CACHE_VERSION}`;
 const ASSETS = `bmt-assets-${CACHE_VERSION}`;
 const MEDIA = `bmt-media-${CACHE_VERSION}`;
@@ -28,6 +28,7 @@ const PRECACHE = [
   'offline.html',
   'assets/css/style.css',
   'assets/js/main.js',
+  'assets/js/search.js',
   'assets/img/logo.png',
   'assets/img/favicon.ico',
 ];
