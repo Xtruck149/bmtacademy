@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="card card--bordered">
           <div class="card-body">
             <span class="tag ${badgeClass}">${badgeText}</span>
-            <h4 class="mt-md">${esc(s.formation)}</h4>
+            <h3 class="h4 mt-md">${esc(s.formation)}</h3>
             <p>${formatDate(s.date)}</p>
             <p class="form-note">${esc(s.lieu)}</p>
           </div>

@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultCards.innerHTML = ranked.map(([page]) => `
       <article class="formation-card">
         <div class="formation-card-body">
-          <h4>${PAGE_TITLES[page] || page}</h4>
+          <h3 class="h4">${PAGE_TITLES[page] || page}</h3>
         </div>
         <div class="formation-card-footer">
           <a href="../${page}" class="btn btn-primary btn-sm">Découvrir</a>

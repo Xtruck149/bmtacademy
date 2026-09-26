@@ -1,7 +1,8 @@
 // Vérifications statiques du site (aucune dépendance, exécuté en CI) :
 //  - chaque lien/asset local (href, src, srcset, poster, url()) pointe vers un fichier existant
 //  - chaque ancre #id locale existe dans la page cible
-//  - chaque page a un <title>, une meta description, un canonical, un seul <h1>, un <main>
+//  - chaque page a un <title>, une meta description, un canonical, un seul <h1>, un <main>,
+//    et aucun saut de niveau de titre (h2 → h4)
 //  - sitemap.xml ↔ pages HTML cohérents
 // Usage : npm run check:links
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
@@ -62,6 +63,14 @@ for (const page of pages) {
   if (h1 !== 1) errors.push(`${rel} → ${h1} balise(s) <h1> (1 attendue)`);
   if (!/<main[\s>]/.test(html)) errors.push(`${rel} → landmark <main> manquant`);
   for (const m of html.matchAll(/<img\b(?![^>]*\balt=)[^>]*>/g)) errors.push(`${rel} → <img> sans alt : ${m[0].slice(0, 80)}`);
+  // Hiérarchie des titres : jamais de saut de niveau (h2 → h4). Pour garder l'apparence
+  // d'un niveau inférieur, utiliser la classe correspondante : <h3 class="h4">.
+  const levels = [...html.replace(/<!--[\s\S]*?-->/g, '').matchAll(/<h([1-6])[\s>][^]*?<\/h\1>/g)]
+    .map(m => [Number(m[1]), m[0].replace(/<[^>]+>/g, '').trim().slice(0, 40)]);
+  for (let i = 1; i < levels.length; i++) {
+    const [prev] = levels[i - 1], [cur, text] = levels[i];
+    if (cur > prev + 1) errors.push(`${rel} → saut de titre h${prev} → h${cur} (« ${text} »)`);
+  }
 }
 
 // sitemap ↔ pages

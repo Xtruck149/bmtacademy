@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function showDetail(point) {
     detail.innerHTML = `
-      <h4>${esc(point.ville)}</h4>
+      <h3 class="h4">${esc(point.ville)}</h3>
       <p>${esc(point.pays)}</p>
       <p class="diaspora-count">${esc(point.etudiants)} étudiants &amp; alumni</p>
       <p class="form-note">Donnée d'exemple — à remplacer par le chiffre réel.</p>

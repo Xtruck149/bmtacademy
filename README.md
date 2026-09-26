@@ -111,12 +111,12 @@ npm test             # tout vérifier avant de pousser
 | `npm run lint:html` | Validation HTML + accessibilité de base (html-validate) |
 | `npm run lint:css` | Lint CSS (stylelint) |
 | `npm run lint:js` | Lint JavaScript (ESLint) |
-| `npm run check:links` | Liens, images et ancres locaux ; `<title>`, description, canonical, un seul `<h1>`, `<main>`, `alt` ; cohérence `sitemap.xml` ↔ pages |
+| `npm run check:links` | Liens, images et ancres locaux ; `<title>`, description, canonical, un seul `<h1>`, `<main>`, `alt`, aucun saut de niveau de titre ; cohérence `sitemap.xml` ↔ pages |
 | `npm run certificats:build` | Régénère l'index chiffré des certificats (voir ci-dessous) |
 
 Ces vérifications tournent automatiquement sur GitHub Actions (`.github/workflows/qualite.yml`) à chaque push sur `main` et chaque pull request. Dependabot propose chaque mois la mise à jour de l'outillage.
 
-**Ajouter une page** : la déclarer dans `sitemap.xml` (sinon `check:links` échoue), reprendre l'en-tête/pied d'une page voisine (le contenu va dans `<main id="main-content">`).
+**Ajouter une page** : la déclarer dans `sitemap.xml` (sinon `check:links` échoue), reprendre l'en-tête/pied d'une page voisine (le contenu va dans `<main id="main-content">`). Un titre qui doit paraître plus petit garde le bon niveau et prend une classe : `<h3 class="h4">`.
 
 **Modifier CSS/JS** : le Service Worker (`sw.js`) sert ces fichiers en *stale-while-revalidate* — les visiteurs récupèrent la nouvelle version dès la visite suivante. Incrémenter `CACHE_VERSION` dans `sw.js` pour forcer une purge complète (ou si la liste `PRECACHE` change).
 
