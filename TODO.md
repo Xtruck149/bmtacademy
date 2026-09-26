@@ -2,6 +2,19 @@
 
 Status: **largely complete** (2026-09-06). Between an earlier round of work already on `main` (37 commits — full nav restructuring, real photography under `assets/img/`, and dedicated pages for nearly everything on this list) and this pass, almost everything from the original audit is now built. Full extracted copy and **every** photo and video from the old live site are staged under [`content-import/`](content-import) for reference (gitignored raw media: `content-import/media/` — **1,710 images, 409MB** — and `content-import/video/` — **72 clips, 627MB** — pulled straight from the old site's own asset manifest, so this is the complete set, not a sample).
 
+## Reprise des contenus de l'ancien site (2026-09-26)
+
+Relevé complet des 40 pages de l'ancien bmtgreenacademy.com (site Canva) et comparaison avec le nouveau site. L'essentiel des textes était déjà repris ; ajouté :
+
+- [x] **Thérapixel Afrika** — créatrice (Dakoua Amelan Marie-Thérèse Bayiha) et les deux départements (créations artistiques & thérapeutiques ; digital branding & plateformes numériques).
+- [x] **Sport-Études** — mission, publics visés, partenaires stratégiques, innovation & recherche (CESH-BMT, Baromètre Sport & Handicap…), impact attendu, « Publicité inclusive avec des rollers », GRAYA HOLISTIC® & NECTAR D'EDEN®, appel à rejoindre le département. Les phrases de l'ancien site sur l'impact attendu étaient illisibles (fautes, mots manquants) : reformulées sans changer le sens.
+- [x] **Parcours étudiant** — modèle pédagogique hybride et ses 4 piliers (dont le déploiement terrain : ateliers, projets, chantiers verts, immersion).
+- [x] **L'Art de l'Impact** — 6e principe (« Le respect des lois »), sa mission, son impact, conclusion.
+- [x] **TikTok** (@bmtacademy15) dans le pied de page des 35 pages et le JSON-LD `sameAs`.
+- [ ] **Photos et vidéos de l'ancien site** — 14 vidéos repérées (Maquillage FX ×3, Rap Ivoire Thérapie ×3, Nos domaines d'action ×3, Handi Roll Ball ×2, Roll Ball Hommes, Thérapie par l'art Enfants, Biographie) et ~1 700 images. Pas encore rapatriées : la connexion de l'ordinateur relié à la session était trop instable.
+- [ ] **Pages de l'ancien site faites uniquement d'images** (le texte est dans les visuels) : Thérapie par l'art Adultes / Handi, Thérapies naturelles, Holistic Graya / Label ECO-BMT, Nos domaines d'action, Thérapie par le rire, Grounding, Gélothérapie, Biographie, « Échico-thérapie », nomination de la vice-présidente FIRBALL. À relire visuellement une fois les images récupérées.
+- Non repris volontairement : rôles de l'équipe (texte de l'ancien site dans le désordre, attribution incertaine) ; bloc « Événement » du pied de page (« Cérémonie privée — témoignages, surprises », « Finale pour la consolidation Roll ball & Handiball ») sans date ni détail.
+
 ## Refonte premium v5 « Académie » (2026-09-25)
 
 - [x] Nouveau système visuel (`style.css` réécrit, classes conservées) : ivoire / vert forêt / or, Fraunces + Manrope, ombres douces, filets fins — appliqué aux 36 pages.
