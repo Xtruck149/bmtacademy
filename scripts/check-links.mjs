@@ -43,7 +43,11 @@ for (const page of pages) {
   const refs = [];
   for (const m of html.matchAll(/<(?!base\b)[a-z]+\b[^>]*?\s(?:href|src|poster)=["']([^"']+)["']/g)) refs.push(m[1]);
   for (const m of html.matchAll(/\ssrcset=["']([^"']+)["']/g)) m[1].split(',').forEach(s => refs.push(s.trim().split(/\s+/)[0]));
-  for (const m of html.matchAll(/url\(\s*['"]?([^'")]+)['"]?\s*\)/g)) refs.push(m[1]);
+  // url() dans une variable CSS (--hero-m:url(…)) : résolue par rapport à assets/css/style.css
+  for (const m of html.matchAll(/(--[\w-]+:\s*)?url\(\s*['"]?([^'")]+)['"]?\s*\)/g)) {
+    if (m[1]) { if (!existsSync(resolve(ROOT, 'assets/css', m[2]))) errors.push(`${rel} → fichier introuvable (variable CSS) : ${m[2]}`); }
+    else refs.push(m[2]);
+  }
 
   for (const ref of refs) {
     if (/^(https?:|mailto:|tel:|data:|javascript:|\/\/)/i.test(ref) || ref.includes('${')) continue;

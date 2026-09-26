@@ -162,3 +162,16 @@ Les photos de `assets/img/libre/` sont dans le domaine public (licence **CC0**),
 | `libre/pole5` | U.S. Department of Agriculture (USDA) | [U.S. Department of Agriculture](https://www.rawpixel.com/image/3306659/free-photo-image-business-owner-agriculture-atlanta) — CC0 |
 | `libre/partenaires` | Work Business | [Matt Moloney](https://stocksnap.io/photo/work-business-WQ2JMRIIQB) — CC0 |
 | `libre/badge` | AWE Cohort 2 Graduation Ceremony | [usembassyghana](https://www.rawpixel.com/image/8714717/awe-cohort-graduation-ceremony) — CC0 |
+
+## Performance et médias
+
+- **Polices** : Fraunces et Manrope sont auto-hébergées dans `assets/fonts/` (licence SIL OFL 1.1, fichiers variables limités aux graisses utilisées). Aucun appel à Google Fonts.
+- **Après l'ajout de photos**, lancer dans l'ordre :
+  ```bash
+  python3 scripts/optimize-images.py   # variantes -640.webp, logos webp
+  python3 scripts/enhance-media.py     # forme des tuiles de galerie, srcset/sizes, image de héros mobile, vidéos verticales
+  npm run search:build && npm run sitemap:dates && npm test
+  ```
+  (Pillow requis : `pip install pillow`.)
+- **Galeries** : la forme de chaque tuile (vedette, haute, large) suit l'orientation de la photo ; les visages restent dans le cadre (`object-position: 50% 30%`).
+- **Navigation instantanée** : règles de pré-rendu (`<script type="speculationrules">`) au survol des liens internes (Chrome/Edge ; ignorées ailleurs).

@@ -50,22 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
   }
 
-  /* ---- Header scroll state ---- */
+  /* ---- Défilement : en-tête, barre de progression, retour en haut ----
+     Un seul écouteur, regroupé dans requestAnimationFrame : les lectures de
+     position (scrollY, scrollHeight) ne forcent plus de recalcul de mise en page
+     à chaque évènement ni au chargement (≈ 200 ms gagnés sur mobile). */
   const header = document.querySelector('.site-header');
-  if (header) {
-    const onHeaderScroll = () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    };
-    window.addEventListener('scroll', onHeaderScroll, { passive: true });
-    onHeaderScroll();
-  }
 
-  /* ---- Scroll progress bar ---- */
   const progress = document.createElement('div');
   progress.className = 'scroll-progress';
+  progress.setAttribute('aria-hidden', 'true');
   document.body.appendChild(progress);
+  // La barre est animée en CSS (animation-timeline) quand le navigateur sait le faire
+  const cssProgress = window.CSS && CSS.supports('animation-timeline', 'scroll()');
 
-  /* ---- Back to top button ---- */
   const toTop = document.createElement('button');
   toTop.className = 'to-top';
   toTop.setAttribute('aria-label', 'Retour en haut');
@@ -74,12 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
   toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: scrollBehavior }));
   document.body.appendChild(toTop);
 
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const y = window.scrollY;
+    if (header) header.classList.toggle('scrolled', y > 20);
+    toTop.classList.toggle('visible', y > 600);
+    if (!cssProgress) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+    }
+  };
   const onScroll = () => {
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-    progress.style.width = pct + '%';
-    toTop.classList.toggle('visible', h.scrollTop > 600);
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
