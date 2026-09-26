@@ -309,6 +309,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ---- Visionneuse des galeries (<dialog> natif). Sans JS, le lien ouvre simplement l'image. ---- */
+  const lbLinks = document.querySelectorAll('a[data-lightbox]');
+  if (lbLinks.length && typeof HTMLDialogElement === 'function') {
+    const dlg = document.createElement('dialog');
+    dlg.className = 'lightbox';
+    dlg.setAttribute('aria-label', 'Image agrandie');
+    dlg.innerHTML = '<button type="button" class="lightbox-close" aria-label="Fermer">&times;</button><img alt=""><p></p>';
+    document.body.appendChild(dlg);
+    const img = dlg.querySelector('img');
+    const cap = dlg.querySelector('p');
+    dlg.querySelector('.lightbox-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+    lbLinks.forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      const thumb = a.querySelector('img');
+      img.src = a.href;
+      img.alt = thumb ? thumb.alt : '';
+      cap.textContent = thumb ? thumb.alt : '';
+      dlg.showModal();
+    }));
+  }
+
   /* ---- Footer copyright year (never needs manual updating again) ---- */
   const copyrightYear = document.getElementById('copyright-year');
   if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();

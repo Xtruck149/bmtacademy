@@ -741,6 +741,34 @@ body > main > div.wrap > .breadcrumbs, main > .wrap:first-child .breadcrumbs { p
 .mobile-cta { display: none; }
 
 /* ===================== RESPONSIVE ===================== */
+/* ===================== GALERIES, VIDÉOS & RÉSEAU (contenus repris de l'ancien site) ===================== */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); }
+.gallery-item { margin: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--sand); box-shadow: var(--shadow-soft); }
+.gallery-item a { display: block; position: relative; }
+.gallery-item img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.6s var(--ease); }
+.gallery-item a:hover img, .gallery-item a:focus-visible img { transform: scale(1.04); }
+.gallery-item figcaption { padding: 8px 12px; font-size: 0.8rem; line-height: 1.4; color: var(--muted); background: var(--paper); }
+.gallery-grid--posters img { aspect-ratio: auto; object-fit: contain; background: var(--paper); }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-lg); align-items: start; }
+.video-grid video { aspect-ratio: auto; max-height: 70vh; }
+.visual-stack { display: grid; gap: var(--space-xl); }
+.visual-stack .photo-card img { width: 100%; }
+.logo-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-md); }
+.logo-tile { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: var(--space-md); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); text-align: center; }
+.logo-tile img { width: 100%; height: 96px; object-fit: contain; }
+.logo-tile figcaption { font-size: 0.78rem; line-height: 1.35; color: var(--muted); }
+.glossary-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-md); }
+.glossary-item { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-lg); }
+.glossary-item .n { display: inline-block; min-width: 2.2em; font-family: var(--font-display); color: var(--gold-text); }
+.glossary-item p { font-size: 0.95rem; margin-top: 6px; }
+.glossary-item .objectif { color: var(--text); }
+.glossary-code { display: inline-block; margin-top: 10px; padding: 4px 10px; border-radius: 6px; background: var(--forest-dk); color: var(--on-dark); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.72rem; letter-spacing: 0.02em; overflow-wrap: anywhere; }
+.lightbox { border: none; padding: 0; background: transparent; max-width: min(96vw, 1400px); max-height: 94vh; }
+.lightbox::backdrop { background: rgba(8, 20, 15, 0.88); }
+.lightbox img { display: block; max-width: 100%; max-height: 86vh; width: auto; height: auto; margin: 0 auto; border-radius: var(--radius-sm); }
+.lightbox p { margin: 10px auto 0; max-width: 70ch; text-align: center; color: #f4efe3; font-size: 0.9rem; }
+.lightbox-close { position: fixed; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.5); background: rgba(0,0,0,0.4); color: #fff; font-size: 1.4rem; line-height: 1; }
+
 @media (max-width: 1100px) {
   section { padding: var(--space-3xl) 0; }
   /* backdrop-filter crée un bloc conteneur pour les éléments fixed : le tiroir
