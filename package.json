@@ -13,6 +13,7 @@
     "lint:js": "eslint .",
     "check:links": "node scripts/check-links.mjs",
     "certificats:build": "node scripts/build-certificats.mjs",
+    "certificats:numero": "node scripts/nouveau-numero.mjs",
     "search:build": "node scripts/build-search-index.mjs",
     "sitemap:dates": "node scripts/update-sitemap-dates.mjs",
     "test": "npm run lint && npm run check:links"

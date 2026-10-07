@@ -35,7 +35,7 @@ Relevé complet des 40 pages de l'ancien bmtgreenacademy.com (site Canva) et com
 - [x] **Performance** — `@import` Google Fonts en doublon du `<link>` supprimé ; vidéo de présentation ré-encodée 43 Mo → 23 Mo (SSIM 0,989, visuellement identique), `preload="none"` + affiche.
 - [x] **Confidentialité** — `certificats.json` publiait en clair les noms des diplômés : remplacé par un index chiffré (AES-GCM + PBKDF2) généré depuis un CSV privé gitignoré (`npm run certificats:build`). Échappement HTML des données JSON injectées (sessions, diaspora, certificats).
 - [x] **Hiérarchie des titres (2026-09-26)** — 186 titres renumérotés sur 35 pages + 3 gabarits JS (sessions, diaspora, quiz) : plus aucun saut de niveau. L'apparence est conservée par les classes `.h3`/`.h4`/`.h5` (sélecteurs `:where()`, spécificité inchangée) — **70 captures avant/après (bureau + mobile) identiques au pixel près**. Pied de page : nom de marque en `<p class="footer-brand-name">`, titres de colonnes en `<h2 class="footer-col-title">`. Logo d'en-tête : `alt` redondant vidé, `aria-label` sur le lien (le texte est masqué sur mobile). axe-core : **0 violation sur les 35 pages** (avant : `heading-order` et `image-redundant-alt` partout). `check:links` bloque désormais tout nouveau saut de titre en CI.
-- [ ] **Reste à faire (non bloquant)** — Numéros de certificats : ajouter un suffixe aléatoire aux prochains.
+- [x] **Numéros de certificats** — `npm run certificats:numero` génère des numéros à suffixe aléatoire ; `certificats:build` avertit si un numéro est séquentiel.
 
 ## Groupe 1-4 — Fonctionnalités statiques (nouvelle passe, 2026-09-06)
 

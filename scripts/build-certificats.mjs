@@ -49,6 +49,9 @@ for (const [i, line] of rows.entries()) {
   if (!numero) { console.error(`✖ Ligne ${i + 2} : numéro vide`); process.exit(1); }
   if (seen.has(numero)) { console.error(`✖ Ligne ${i + 2} : numéro en double ${numero}`); process.exit(1); }
   seen.add(numero);
+  if (!process.argv.includes('--exemple') && /-\d+$/.test(numero)) {
+    console.warn(`⚠ Ligne ${i + 2} : ${numero} est séquentiel — voir « npm run certificats:numero » pour un suffixe aléatoire.`);
+  }
 
   const base = await crypto.subtle.importKey('raw', enc.encode(numero), 'PBKDF2', false, ['deriveBits']);
   const bits = new Uint8Array(await crypto.subtle.deriveBits(

@@ -113,6 +113,7 @@ npm test             # tout vérifier avant de pousser
 | `npm run lint:js` | Lint JavaScript (ESLint) |
 | `npm run check:links` | Liens, images et ancres locaux ; `<title>`, description, canonical, un seul `<h1>`, `<main>`, `alt`, aucun saut de niveau de titre ; cohérence `sitemap.xml` ↔ pages |
 | `npm run certificats:build` | Régénère l'index chiffré des certificats (voir ci-dessous) |
+| `npm run certificats:numero -- 2025 7 3` | Génère 3 numéros de certificat à suffixe aléatoire à partir du n° 0007 |
 
 Ces vérifications tournent automatiquement sur GitHub Actions (`.github/workflows/qualite.yml`) à chaque push sur `main` et chaque pull request. Dependabot propose chaque mois la mise à jour de l'outillage.
 
@@ -131,7 +132,7 @@ Ces vérifications tournent automatiquement sur GitHub Actions (`.github/workflo
    ```
 2. `npm run certificats:build` → régénère `assets/data/certificats.json`, à committer.
 
-Recommandation : ajouter un **suffixe aléatoire** aux nouveaux numéros (ex. `-K7Q2`). Des numéros purement séquentiels restent devinables par force brute, ce qui limite la protection.
+Recommandation : ajouter un **suffixe aléatoire** aux nouveaux numéros (ex. `-K7Q2`) — `npm run certificats:numero` les génère, et `certificats:build` avertit si un numéro est purement séquentiel. Des numéros séquentiels restent devinables par force brute, ce qui limite la protection.
 
 
 ## Accréditation
