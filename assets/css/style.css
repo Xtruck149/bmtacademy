@@ -522,7 +522,7 @@ body > main > div.wrap > .breadcrumbs, main > .wrap:first-child .breadcrumbs { p
   transition: border-color var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
 }
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus,
-.form-group input[type="text"]:focus, .form-group select:focus { outline: none; border-color: var(--forest); box-shadow: 0 0 0 4px rgba(176, 132, 51, 0.22); }
+.form-group input[type="text"]:focus, .form-group select:focus { outline: 2px solid transparent; border-color: var(--forest); box-shadow: 0 0 0 4px rgba(176, 132, 51, 0.22); }
 .form-field textarea { resize: vertical; min-height: 140px; }
 .form-note { font-size: 0.85rem; color: var(--muted); margin-top: var(--space-sm); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
@@ -558,6 +558,7 @@ body > main > div.wrap > .breadcrumbs, main > .wrap:first-child .breadcrumbs { p
 .diaspora-diaspora-links line { stroke: var(--gold); stroke-width: 1.5; stroke-dasharray: 5 6; opacity: 0.8; }
 .diaspora-point { fill: var(--forest); stroke: var(--paper); stroke-width: 2; cursor: pointer; transition: fill 0.2s var(--ease); }
 .diaspora-point:hover, .diaspora-point:focus { fill: var(--gold); outline: none; }
+.diaspora-point:focus-visible { stroke: var(--ink); stroke-width: 4; }
 .diaspora-detail { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-soft); padding: var(--space-xl); min-height: 150px; }
 .diaspora-count { font-weight: 700; color: var(--forest); font-size: 1.1rem; }
 
@@ -866,7 +867,8 @@ p, li, figcaption, blockquote { text-wrap: pretty; }
 .search-dialog[open] { display: flex; flex-direction: column; }
 .search-head { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
 .search-head input { flex: 1; border: none; background: transparent; font-size: 1.1rem; color: var(--forest); padding: 8px 4px; }
-.search-head input:focus { outline: none; }
+.search-head input:focus { outline: 2px solid transparent; }
+.search-head:focus-within { box-shadow: inset 0 -3px 0 var(--gold); }
 .search-head button { border: 1px solid var(--line-strong); background: transparent; border-radius: 8px; padding: 4px 8px; font-size: 0.75rem; color: var(--muted); }
 .search-results { list-style: none; margin: 0; padding: 8px; overflow-y: auto; }
 .search-results a { display: block; padding: 12px 14px; border-radius: 12px; color: inherit; }
