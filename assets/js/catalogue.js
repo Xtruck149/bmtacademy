@@ -36,19 +36,6 @@
       img.height = 1350;
       pic.append(src, img);
       media.append(pic);
-    } else if (f.image) {
-      const pic = document.createElement('picture');
-      const src = el('source');
-      src.type = 'image/webp';
-      src.srcset = f.image + '.webp';
-      const img = document.createElement('img');
-      img.src = f.image + '.jpg';
-      img.alt = '';
-      img.loading = 'lazy';
-      img.width = 640;
-      img.height = 400;
-      pic.append(src, img);
-      media.append(pic);
     } else {
       const img = document.createElement('img');
       img.src = '../assets/img/logo-216.webp';

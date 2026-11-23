@@ -40,7 +40,6 @@
       "prix_fcfa": 150000,
       "statut": "disponible",
       "page": "../programmes/musicotherapie.html",
-      "image": "../assets/img/programmes/musicotherapie-hero",
       "bestseller": true,
       "couverture": "assets/img/formations/musicotherapie-couverture"
     },
@@ -52,7 +51,6 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/rap-ivoire-therapie.html",
-      "image": "../assets/img/programmes/rap-ivoire-therapie-hero",
       "couverture": "assets/img/formations/rap-therapie-couverture",
       "modules": 6
     },
@@ -63,8 +61,7 @@
       "resume": "Gélothérapie : le rire au service du mieux-être.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/therapie-par-le-rire.html",
-      "image": "../assets/img/programmes/therapie-par-le-rire-hero"
+      "page": "../programmes/therapie-par-le-rire.html"
     },
     {
       "id": "therapie-art-adultes",
@@ -73,8 +70,7 @@
       "resume": "Créer pour se libérer, se recentrer et avancer.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/therapie-par-lart-adultes.html",
-      "image": "../assets/img/programmes/art-adultes-1"
+      "page": "../programmes/therapie-par-lart-adultes.html"
     },
     {
       "id": "therapie-art-enfants",
@@ -83,8 +79,7 @@
       "resume": "Ateliers créatifs adaptés au développement de l'enfant.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/therapie-par-lart-enfants.html",
-      "image": "../assets/img/programmes/art-enfants-1"
+      "page": "../programmes/therapie-par-lart-enfants.html"
     },
     {
       "id": "therapie-art-handicap",
@@ -93,8 +88,7 @@
       "resume": "Art-thérapie inclusive pour les personnes en situation de handicap.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/therapie-par-lart-handicap.html",
-      "image": "../assets/img/programmes/therapie-par-lart-handicap-hero"
+      "page": "../programmes/therapie-par-lart-handicap.html"
     },
     {
       "id": "art-therapie-danse",
@@ -104,7 +98,6 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/art-therapie-danse.html",
-      "image": null,
       "modules": 5,
       "fiche": {
         "slug": "art-therapie-danse",
@@ -140,8 +133,7 @@
       "resume": "Effets spéciaux et ateliers de maquillage inclusifs.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/maquillage-fx.html",
-      "image": "../assets/img/maquillage-fx-1"
+      "page": "../programmes/maquillage-fx.html"
     },
     {
       "id": "feng-shui",
@@ -151,7 +143,6 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/feng-shui.html",
-      "image": null,
       "nouveau": true,
       "modules": 10,
       "couverture": "assets/img/documents/feng-shui-manuel",
@@ -206,7 +197,6 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/home-staging.html",
-      "image": null,
       "nouveau": true,
       "modules": 6,
       "couverture": "assets/img/documents/home-staging-guide",
@@ -251,7 +241,6 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/energie-creatrice-prosperite.html",
-      "image": null,
       "nouveau": true,
       "fiche": {
         "slug": "energie-creatrice-prosperite",
@@ -286,8 +275,14 @@
       "prix_fcfa": 150000,
       "statut": "disponible",
       "page": "../programmes/mystere-sacre-des-epices.html",
-      "image": "../assets/img/programmes/mystere-sacre-des-epices-hero",
-      "modules": 5
+      "modules": 5,
+      "couverture": "assets/img/documents/epices-carnet",
+      "documents": [
+        {
+          "titre": "Carnet de pratique personnelle et d'exploration sensorielle",
+          "image": "assets/img/documents/epices-carnet"
+        }
+      ]
     },
     {
       "id": "art-de-la-paix",
@@ -297,7 +292,6 @@
       "prix_fcfa": 150000,
       "statut": "disponible",
       "page": "../programmes/art-de-la-paix.html",
-      "image": "../assets/img/programmes/art-de-la-paix-hero",
       "bestseller": true,
       "couverture": "assets/img/documents/paix-guide-dignite"
     },
@@ -309,7 +303,6 @@
       "prix_fcfa": 150000,
       "statut": "disponible",
       "page": "../programmes/art-de-limpact.html",
-      "image": "../assets/img/programmes/art-de-limpact-hero",
       "bestseller": true,
       "couverture": "assets/img/documents/impact-cours"
     },
@@ -320,8 +313,7 @@
       "resume": "Comprendre les comportements pour mieux prévenir.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/profilage-criminel.html",
-      "image": "../assets/img/programmes/profilage-criminel-hero"
+      "page": "../programmes/profilage-criminel.html"
     },
     {
       "id": "grounding",
@@ -330,8 +322,7 @@
       "resume": "S'ancrer par la respiration et le corps.",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../programmes/grounding-respiration-consciente.html",
-      "image": "../assets/img/programmes/grounding-hero"
+      "page": "../programmes/grounding-respiration-consciente.html"
     },
     {
       "id": "chauffeur-eco",
@@ -341,7 +332,6 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/chauffeur-eco-responsable.html",
-      "image": null,
       "nouveau": true,
       "modules": 8,
       "couverture": "assets/img/documents/chauffeur-livret",
@@ -387,18 +377,17 @@
       "resume": "Programme sportif inclusif (FIRBALL).",
       "prix_fcfa": null,
       "statut": "disponible",
-      "page": "../inclusive/sport-etudes.html",
-      "image": null
+      "page": "../inclusive/sport-etudes.html"
     },
     {
       "id": "sexotherapie",
-      "titre": "Sexothérapie",
+      "titre": "Sexualité holistique",
       "categorie": "relations",
-      "resume": "",
+      "resume": "Sexualité holistique : corps, cœur, âme et esprit. Initiation, unités 4 à 6 et module d'expertise avancée.",
       "prix_fcfa": 150000,
-      "statut": "masque",
+      "statut": "disponible",
       "page": "../programmes/sexotherapie.html",
-      "image": null
+      "couverture": "assets/img/documents/sexo-initiation-manuel"
     }
   ]
 }

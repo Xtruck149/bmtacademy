@@ -42,6 +42,8 @@ for (const f of data.formations.filter(x => x.fiche)) {
         inLanguage: 'fr',
       })}\n</script>`);
   head = head.replace(/<link rel="preload" as="image"[^>]*>/g, '');
+  const ogImg = cover ? `${BASE}/${cover}.jpg` : `${BASE}/assets/img/logo-512.png`;
+  head = head.replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${ogImg}$2`).replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${ogImg}$2`).replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${esc(f.titre)} — BMT Green Academy$2`).replace(/(<meta property="og:image:alt" content=")[^"]*(")/, `$1${esc(f.titre)}$2`);
 
   const cards = modules.map((m, i) => `      <div class="card card--elevated">
         <div class="card-body">

@@ -1030,3 +1030,5 @@ p, li, figcaption, blockquote { text-wrap: pretty; }
 .cover-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-lg); }
 .cover-strip-item { display: flex; flex-direction: column; gap: 8px; text-align: center; font-weight: 600; color: var(--forest); text-decoration: none; }
 .cover-strip-item img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px -12px rgba(12, 43, 32, 0.45); }
+.doc-placeholder { object-fit: contain !important; padding: 28px; background: var(--paper); opacity: 0.75; }
+.home-visual-photo.doc-cover { object-fit: contain; background: var(--paper); }
