@@ -5,8 +5,9 @@
 // (check:links échoue si une page du sitemap manque dans l'index).
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = new URL('..', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const SKIP = new Set(['404.html', 'offline.html']);
 
 const walk = (dir, out = []) => {
