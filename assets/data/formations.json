@@ -189,6 +189,11 @@
           "titre": "Livret de l'apprenant",
           "image": "assets/img/documents/feng-shui-livret",
           "pages": 63
+        },
+        {
+          "titre": "Corrigé du formateur",
+          "image": "assets/img/documents/feng-shui-corrige",
+          "pages": 27
         }
       ]
     },
@@ -226,9 +231,14 @@
       },
       "documents": [
         {
-          "titre": "Guide du praticien et manuel de cours (232 p.)",
+          "titre": "Guide du praticien",
           "image": "assets/img/documents/home-staging-guide",
           "pages": 65
+        },
+        {
+          "titre": "Manuel de cours",
+          "image": "assets/img/documents/home-staging-manuel",
+          "pages": 232
         }
       ]
     },
