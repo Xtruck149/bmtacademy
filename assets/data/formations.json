@@ -296,7 +296,8 @@
       "statut": "disponible",
       "page": "../programmes/art-de-la-paix.html",
       "image": "../assets/img/programmes/art-de-la-paix-hero",
-      "bestseller": true
+      "bestseller": true,
+      "couverture": "assets/img/documents/paix-guide-dignite"
     },
     {
       "id": "art-de-limpact",
@@ -307,7 +308,8 @@
       "statut": "disponible",
       "page": "../programmes/art-de-limpact.html",
       "image": "../assets/img/programmes/art-de-limpact-hero",
-      "bestseller": true
+      "bestseller": true,
+      "couverture": "assets/img/documents/impact-cours"
     },
     {
       "id": "profilage-criminel",

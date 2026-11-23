@@ -1023,3 +1023,10 @@ p, li, figcaption, blockquote { text-wrap: pretty; }
 .catalogue-media--cover { aspect-ratio: 3 / 4; }
 .catalogue-media--cover img { object-fit: contain; }
 .split-layout ul { list-style: disc; padding-left: 1.2em; margin-top: var(--space-md); }
+
+/* Couvertures de documents affichées en entier (cartes, vignettes, bandeau) */
+.program-card img.doc-cover, .related-thumb img.doc-cover { object-fit: contain; background: var(--paper); }
+.related-thumb:has(.doc-cover) { background: var(--paper); }
+.cover-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-lg); }
+.cover-strip-item { display: flex; flex-direction: column; gap: 8px; text-align: center; font-weight: 600; color: var(--forest); text-decoration: none; }
+.cover-strip-item img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px -12px rgba(12, 43, 32, 0.45); }
