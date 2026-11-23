@@ -41,7 +41,8 @@
       "statut": "disponible",
       "page": "../programmes/musicotherapie.html",
       "image": "../assets/img/programmes/musicotherapie-hero",
-      "bestseller": true
+      "bestseller": true,
+      "couverture": "assets/img/formations/musicotherapie-couverture"
     },
     {
       "id": "rap-ivoire-therapie",
@@ -51,7 +52,8 @@
       "prix_fcfa": null,
       "statut": "disponible",
       "page": "../programmes/rap-ivoire-therapie.html",
-      "image": "../assets/img/programmes/rap-ivoire-therapie-hero"
+      "image": "../assets/img/programmes/rap-ivoire-therapie-hero",
+      "couverture": "assets/img/formations/rap-therapie-couverture"
     },
     {
       "id": "therapie-par-le-rire",
@@ -120,7 +122,15 @@
           "Guide de l'apprenant",
           "Études de cas"
         ]
-      }
+      },
+      "couverture": "assets/img/documents/danse-guide",
+      "documents": [
+        {
+          "titre": "Guide de l'apprenant",
+          "image": "assets/img/documents/danse-guide",
+          "pages": 120
+        }
+      ]
     },
     {
       "id": "maquillage-fx",
@@ -143,7 +153,7 @@
       "image": null,
       "nouveau": true,
       "modules": 10,
-      "couverture": "assets/img/formations/feng-shui-couverture",
+      "couverture": "assets/img/documents/feng-shui-manuel",
       "fiche": {
         "slug": "feng-shui",
         "intro": [
@@ -168,7 +178,19 @@
           "Évaluation finale par QCM en ligne",
           "Certificat numérique après validation"
         ]
-      }
+      },
+      "documents": [
+        {
+          "titre": "Manuel de cours",
+          "image": "assets/img/documents/feng-shui-manuel",
+          "pages": 293
+        },
+        {
+          "titre": "Livret de l'apprenant",
+          "image": "assets/img/documents/feng-shui-livret",
+          "pages": 63
+        }
+      ]
     },
     {
       "id": "home-staging",
@@ -181,7 +203,7 @@
       "image": null,
       "nouveau": true,
       "modules": 6,
-      "couverture": "assets/img/formations/home-staging-couverture",
+      "couverture": "assets/img/documents/home-staging-guide",
       "fiche": {
         "slug": "home-staging",
         "intro": [
@@ -201,7 +223,14 @@
           "Manuel de cours et guide du praticien",
           "Études de cas, exercices pratiques et QCM de fin de module"
         ]
-      }
+      },
+      "documents": [
+        {
+          "titre": "Guide du praticien et manuel de cours (232 p.)",
+          "image": "assets/img/documents/home-staging-guide",
+          "pages": 65
+        }
+      ]
     },
     {
       "id": "energie-creatrice",
@@ -228,7 +257,15 @@
           "Guérir sa relation à l'argent"
         ]
       },
-      "modules": 5
+      "modules": 5,
+      "couverture": "assets/img/documents/energie-creatrice",
+      "documents": [
+        {
+          "titre": "Support de formation",
+          "image": "assets/img/documents/energie-creatrice",
+          "pages": 45
+        }
+      ]
     },
     {
       "id": "mystere-sacre-des-epices",
@@ -293,7 +330,7 @@
       "image": null,
       "nouveau": true,
       "modules": 8,
-      "couverture": "assets/img/formations/chauffeur-livret-couverture",
+      "couverture": "assets/img/documents/chauffeur-livret",
       "fiche": {
         "slug": "chauffeur-eco-responsable",
         "intro": [
@@ -315,7 +352,19 @@
           "Plan personnel de conduite éco-responsable",
           "Évaluation finale"
         ]
-      }
+      },
+      "documents": [
+        {
+          "titre": "Livret du chauffeur",
+          "image": "assets/img/documents/chauffeur-livret",
+          "pages": 53
+        },
+        {
+          "titre": "Guide pédagogique du formateur",
+          "image": "assets/img/documents/chauffeur-guide",
+          "pages": 61
+        }
+      ]
     },
     {
       "id": "sport-etudes",

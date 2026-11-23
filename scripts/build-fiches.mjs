@@ -49,7 +49,20 @@ for (const f of data.formations.filter(x => x.fiche)) {
           <h3 class="h4">${esc(m)}</h3>
         </div>
       </div>`).join('\n');
-  const pts = (points || []).map(p => `          <li>${esc(p)}</li>`).join('\n');
+  const docsHtml = (f.documents || []).length ? `<section class="section-compact bg-cream">
+  <div class="wrap">
+    <div class="section-header centered">
+      <span class="eyebrow">Supports de formation</span>
+      <h2>Les documents que vous recevez</h2>
+    </div>
+    <div class="grid-3">
+${f.documents.map(x => `      <figure class="photo-card"><picture><source srcset="../${x.image}.webp" type="image/webp"><img src="../${x.image}.jpg" alt="Couverture : ${esc(x.titre)}" width="900" height="1274" loading="lazy"></picture><figcaption>${esc(x.titre)}${x.pages ? ' — ' + x.pages + ' pages' : ''}</figcaption></figure>`).join('\n')}
+    </div>
+  </div>
+</section>
+
+` : '';
+const pts = (points || []).map(p => `          <li>${esc(p)}</li>`).join('\n');
 
   const main = `<main id="main-content">
 
@@ -86,7 +99,7 @@ ${intro.map(p => `        <p>${esc(p)}</p>`).join('\n')}
 ${pts ? `        <ul>\n${pts}\n        </ul>` : ''}
       </div>
 ${cover ? `      <figure class="photo-card">
-        <picture><source srcset="../${cover}.webp" type="image/webp"><img src="../${cover}.jpg" alt="Couverture du support de formation : ${esc(f.titre)}" width="900" height="1350" loading="lazy"></picture>
+        <picture><source srcset="../${cover}.webp" type="image/webp"><img src="../${cover}.jpg" alt="Couverture du support de formation : ${esc(f.titre)}" width="900" height="1274" loading="lazy"></picture>
       </figure>` : ''}
     </div>
   </div>
@@ -104,7 +117,7 @@ ${cards}
   </div>
 </section>
 
-<section class="cta-band">
+${docsHtml}<section class="cta-band">
   <div class="wrap">
     <h2>${prix}</h2>
     <p>Formation en ligne, à votre rythme, avec évaluation finale et certificat BMT Green Academy.</p>
