@@ -53,7 +53,8 @@
       "statut": "disponible",
       "page": "../programmes/rap-ivoire-therapie.html",
       "image": "../assets/img/programmes/rap-ivoire-therapie-hero",
-      "couverture": "assets/img/formations/rap-therapie-couverture"
+      "couverture": "assets/img/formations/rap-therapie-couverture",
+      "modules": 6
     },
     {
       "id": "therapie-par-le-rire",
@@ -285,7 +286,8 @@
       "prix_fcfa": 150000,
       "statut": "disponible",
       "page": "../programmes/mystere-sacre-des-epices.html",
-      "image": "../assets/img/programmes/mystere-sacre-des-epices-hero"
+      "image": "../assets/img/programmes/mystere-sacre-des-epices-hero",
+      "modules": 5
     },
     {
       "id": "art-de-la-paix",
