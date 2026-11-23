@@ -22,7 +22,21 @@
   function card(f, catName) {
     const art = el('article', 'card catalogue-card');
     const media = el('div', 'catalogue-media');
-    if (f.image) {
+    if (f.couverture) {
+      media.classList.add('catalogue-media--cover');
+      const pic = document.createElement('picture');
+      const src = el('source');
+      src.type = 'image/webp';
+      src.srcset = '../' + f.couverture + '.webp';
+      const img = document.createElement('img');
+      img.src = '../' + f.couverture + '.jpg';
+      img.alt = '';
+      img.loading = 'lazy';
+      img.width = 900;
+      img.height = 1350;
+      pic.append(src, img);
+      media.append(pic);
+    } else if (f.image) {
       const pic = document.createElement('picture');
       const src = el('source');
       src.type = 'image/webp';

@@ -1020,3 +1020,6 @@ p, li, figcaption, blockquote { text-wrap: pretty; }
 .catalogue-badges { display: flex; flex-wrap: wrap; gap: 6px; }
 .catalogue-price { font-weight: 700; color: var(--forest); margin-top: auto; }
 .catalogue-meta { color: var(--muted); font-size: 0.9rem; }
+.catalogue-media--cover { aspect-ratio: 3 / 4; }
+.catalogue-media--cover img { object-fit: contain; }
+.split-layout ul { list-style: disc; padding-left: 1.2em; margin-top: var(--space-md); }

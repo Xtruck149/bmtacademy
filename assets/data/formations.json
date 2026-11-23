@@ -1,33 +1,341 @@
 {
   "_lisezmoi": "Source unique du catalogue (formations/catalogue.html). 'prix_fcfa': null = prix à définir par la fondatrice. 'statut': disponible (page existante) | bientot (matériel prêt, pas encore de page) | masque (jamais affichée dans le catalogue sans accord explicite). 'bestseller'/'nouveau' sont des indicateurs éditoriaux à valider, pas des chiffres de vente.",
   "categories": [
-    { "id": "arts-therapies", "titre": "Arts-thérapies" },
-    { "id": "habitat", "titre": "Habitat et bien-être" },
-    { "id": "cuisine", "titre": "Cuisine et épices" },
-    { "id": "leadership", "titre": "Leadership, paix et impact" },
-    { "id": "metiers-verts", "titre": "Métiers verts et savoir-vivre" },
-    { "id": "inclusion", "titre": "Inclusion et sport" },
-    { "id": "relations", "titre": "Relations et vie intime" }
+    {
+      "id": "arts-therapies",
+      "titre": "Arts-thérapies"
+    },
+    {
+      "id": "habitat",
+      "titre": "Habitat et bien-être"
+    },
+    {
+      "id": "cuisine",
+      "titre": "Cuisine et épices"
+    },
+    {
+      "id": "leadership",
+      "titre": "Leadership, paix et impact"
+    },
+    {
+      "id": "metiers-verts",
+      "titre": "Métiers verts et savoir-vivre"
+    },
+    {
+      "id": "inclusion",
+      "titre": "Inclusion et sport"
+    },
+    {
+      "id": "relations",
+      "titre": "Relations et vie intime"
+    }
   ],
   "formations": [
-    { "id": "musicotherapie", "titre": "Musicothérapie", "categorie": "arts-therapies", "resume": "Le pouvoir du son et des vibrations : 10 modules pour accompagner par la musique.", "modules": 10, "prix_fcfa": 150000, "statut": "disponible", "page": "../programmes/musicotherapie.html", "image": "../assets/img/programmes/musicotherapie-hero", "bestseller": true },
-    { "id": "rap-ivoire-therapie", "titre": "Rap Ivoire Thérapie", "categorie": "arts-therapies", "resume": "Le rap comme outil d'expression et de reconstruction.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/rap-ivoire-therapie.html", "image": "../assets/img/programmes/rap-ivoire-therapie-hero" },
-    { "id": "therapie-par-le-rire", "titre": "Thérapie par le rire", "categorie": "arts-therapies", "resume": "Gélothérapie : le rire au service du mieux-être.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/therapie-par-le-rire.html", "image": "../assets/img/programmes/therapie-par-le-rire-hero" },
-    { "id": "therapie-art-adultes", "titre": "Thérapie par l'art — adultes", "categorie": "arts-therapies", "resume": "Créer pour se libérer, se recentrer et avancer.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/therapie-par-lart-adultes.html", "image": "../assets/img/programmes/art-adultes-1" },
-    { "id": "therapie-art-enfants", "titre": "Thérapie par l'art — enfants", "categorie": "arts-therapies", "resume": "Ateliers créatifs adaptés au développement de l'enfant.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/therapie-par-lart-enfants.html", "image": "../assets/img/programmes/art-enfants-1" },
-    { "id": "therapie-art-handicap", "titre": "Thérapie par l'art — handicap", "categorie": "inclusion", "resume": "Art-thérapie inclusive pour les personnes en situation de handicap.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/therapie-par-lart-handicap.html", "image": "../assets/img/programmes/therapie-par-lart-handicap-hero" },
-    { "id": "art-therapie-danse", "titre": "Art-thérapie par la danse", "categorie": "arts-therapies", "resume": "Guide complet de l'apprenant (120 pages).", "prix_fcfa": null, "statut": "bientot", "page": null, "image": null },
-    { "id": "maquillage-fx", "titre": "Maquillage FX", "categorie": "arts-therapies", "resume": "Effets spéciaux et ateliers de maquillage inclusifs.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/maquillage-fx.html", "image": "../assets/img/maquillage-fx-1" },
-    { "id": "feng-shui", "titre": "Feng Shui", "categorie": "habitat", "resume": "Manuel de cours, livret de l'apprenant et corrigé formateur.", "prix_fcfa": null, "statut": "bientot", "page": null, "image": null, "nouveau": true },
-    { "id": "home-staging", "titre": "Home Staging et médecine de l'habitat", "categorie": "habitat", "resume": "Guide du praticien et manuel de cours sur l'habitat sain.", "prix_fcfa": null, "statut": "bientot", "page": null, "image": null, "nouveau": true },
-    { "id": "energie-creatrice", "titre": "L'énergie créatrice et l'art de la prospérité", "categorie": "leadership", "resume": "Formation sur l'énergie créatrice et la prospérité.", "prix_fcfa": null, "statut": "bientot", "page": null, "image": null, "nouveau": true },
-    { "id": "mystere-sacre-des-epices", "titre": "Le mystère sacré des épices", "categorie": "cuisine", "resume": "Épices et cuisine thérapeutique.", "prix_fcfa": 150000, "statut": "disponible", "page": "../programmes/mystere-sacre-des-epices.html", "image": "../assets/img/programmes/mystere-sacre-des-epices-hero" },
-    { "id": "art-de-la-paix", "titre": "L'Art de la Paix", "categorie": "leadership", "resume": "Devenir ambassadeur de la paix et de la fraternité.", "prix_fcfa": 150000, "statut": "disponible", "page": "../programmes/art-de-la-paix.html", "image": "../assets/img/programmes/art-de-la-paix-hero", "bestseller": true },
-    { "id": "art-de-limpact", "titre": "L'Art de l'Impact", "categorie": "leadership", "resume": "Six principes pour un impact social véritable.", "prix_fcfa": 150000, "statut": "disponible", "page": "../programmes/art-de-limpact.html", "image": "../assets/img/programmes/art-de-limpact-hero", "bestseller": true },
-    { "id": "profilage-criminel", "titre": "Profilage criminel", "categorie": "leadership", "resume": "Comprendre les comportements pour mieux prévenir.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/profilage-criminel.html", "image": "../assets/img/programmes/profilage-criminel-hero" },
-    { "id": "grounding", "titre": "Grounding et respiration consciente", "categorie": "arts-therapies", "resume": "S'ancrer par la respiration et le corps.", "prix_fcfa": null, "statut": "disponible", "page": "../programmes/grounding-respiration-consciente.html", "image": "../assets/img/programmes/grounding-hero" },
-    { "id": "chauffeur-eco", "titre": "Chauffeur professionnel éco-responsable", "categorie": "metiers-verts", "resume": "Savoir-vivre et conduite responsable : guide formateur et livret.", "prix_fcfa": null, "statut": "bientot", "page": null, "image": null, "nouveau": true },
-    { "id": "sport-etudes", "titre": "Sport-Études et Roll Ball", "categorie": "inclusion", "resume": "Programme sportif inclusif (FIRBALL).", "prix_fcfa": null, "statut": "disponible", "page": "../inclusive/sport-etudes.html", "image": null },
-    { "id": "sexotherapie", "titre": "Sexothérapie", "categorie": "relations", "resume": "", "prix_fcfa": 150000, "statut": "masque", "page": "../programmes/sexotherapie.html", "image": null }
+    {
+      "id": "musicotherapie",
+      "titre": "Musicothérapie",
+      "categorie": "arts-therapies",
+      "resume": "Le pouvoir du son et des vibrations : 10 modules pour accompagner par la musique.",
+      "modules": 10,
+      "prix_fcfa": 150000,
+      "statut": "disponible",
+      "page": "../programmes/musicotherapie.html",
+      "image": "../assets/img/programmes/musicotherapie-hero",
+      "bestseller": true
+    },
+    {
+      "id": "rap-ivoire-therapie",
+      "titre": "Rap Ivoire Thérapie",
+      "categorie": "arts-therapies",
+      "resume": "Le rap comme outil d'expression et de reconstruction.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/rap-ivoire-therapie.html",
+      "image": "../assets/img/programmes/rap-ivoire-therapie-hero"
+    },
+    {
+      "id": "therapie-par-le-rire",
+      "titre": "Thérapie par le rire",
+      "categorie": "arts-therapies",
+      "resume": "Gélothérapie : le rire au service du mieux-être.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/therapie-par-le-rire.html",
+      "image": "../assets/img/programmes/therapie-par-le-rire-hero"
+    },
+    {
+      "id": "therapie-art-adultes",
+      "titre": "Thérapie par l'art — adultes",
+      "categorie": "arts-therapies",
+      "resume": "Créer pour se libérer, se recentrer et avancer.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/therapie-par-lart-adultes.html",
+      "image": "../assets/img/programmes/art-adultes-1"
+    },
+    {
+      "id": "therapie-art-enfants",
+      "titre": "Thérapie par l'art — enfants",
+      "categorie": "arts-therapies",
+      "resume": "Ateliers créatifs adaptés au développement de l'enfant.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/therapie-par-lart-enfants.html",
+      "image": "../assets/img/programmes/art-enfants-1"
+    },
+    {
+      "id": "therapie-art-handicap",
+      "titre": "Thérapie par l'art — handicap",
+      "categorie": "inclusion",
+      "resume": "Art-thérapie inclusive pour les personnes en situation de handicap.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/therapie-par-lart-handicap.html",
+      "image": "../assets/img/programmes/therapie-par-lart-handicap-hero"
+    },
+    {
+      "id": "art-therapie-danse",
+      "titre": "Art-thérapie par la danse",
+      "categorie": "arts-therapies",
+      "resume": "Guide complet de l'apprenant (120 pages).",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/art-therapie-danse.html",
+      "image": null,
+      "modules": 5,
+      "fiche": {
+        "slug": "art-therapie-danse",
+        "intro": [
+          "Cette formation pose les fondements de l'art-thérapie, apporte les bases de psychologie utiles à l'art-thérapeute, puis explore le corps et le mouvement et les outils de la danse-thérapie.",
+          "Elle se conclut par l'éthique professionnelle. Un guide de l'apprenant de 120 pages accompagne le parcours."
+        ],
+        "modules": [
+          "Les fondements de l'art-thérapie",
+          "Psychologie de base pour l'art-thérapeute",
+          "Le corps et le mouvement",
+          "Les outils de la danse-thérapie",
+          "L'éthique professionnelle"
+        ],
+        "points": [
+          "Guide de l'apprenant",
+          "Études de cas"
+        ]
+      }
+    },
+    {
+      "id": "maquillage-fx",
+      "titre": "Maquillage FX",
+      "categorie": "arts-therapies",
+      "resume": "Effets spéciaux et ateliers de maquillage inclusifs.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/maquillage-fx.html",
+      "image": "../assets/img/maquillage-fx-1"
+    },
+    {
+      "id": "feng-shui",
+      "titre": "Feng Shui",
+      "categorie": "habitat",
+      "resume": "Feng Shui traditionnel, décoration holistique, paysager et design biophilique : 10 modules.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/feng-shui.html",
+      "image": null,
+      "nouveau": true,
+      "modules": 10,
+      "couverture": "assets/img/formations/feng-shui-couverture",
+      "fiche": {
+        "slug": "feng-shui",
+        "intro": [
+          "Le Feng Shui est une tradition chinoise d'observation et d'organisation de l'environnement, fondée sur les relations entre l'être humain, son habitat et son milieu.",
+          "Cette formation professionnelle propose une approche structurée de ses fondements historiques et philosophiques, puis de ses applications à l'aménagement des espaces de vie et de travail, avec des notions de décoration holistique, d'aménagement paysager et de design biophilique.",
+          "Formation numérique asynchrone : vous étudiez à votre rythme, puis passez l'évaluation finale en ligne (QCM) lorsque vous êtes prêt(e)."
+        ],
+        "modules": [
+          "Origines, histoire et pensée chinoise",
+          "Principes de base et outils du Feng Shui",
+          "Choisir son terrain et penser sa maison",
+          "Le jardin, les couleurs, les miroirs et la disposition des lumières",
+          "L'entrée et les escaliers",
+          "Le salon et la salle à manger",
+          "Cuisine, salle de bain et toilettes",
+          "Chambres, rangements et bureau",
+          "Feng Shui au travail",
+          "Mener une consultation Feng Shui"
+        ],
+        "points": [
+          "Manuel de cours, livret de l'apprenant et corrigé formateur",
+          "Évaluation finale par QCM en ligne",
+          "Certificat numérique après validation"
+        ]
+      }
+    },
+    {
+      "id": "home-staging",
+      "titre": "Médecine de l'habitat et Home Staging",
+      "categorie": "habitat",
+      "resume": "Habitat sain, confort intérieur, écologie de l'habitat et harmonisation : 6 modules et un guide du praticien.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/home-staging.html",
+      "image": null,
+      "nouveau": true,
+      "modules": 6,
+      "couverture": "assets/img/formations/home-staging-couverture",
+      "fiche": {
+        "slug": "home-staging",
+        "intro": [
+          "La médecine de l'habitat étudie comment le logement influence la santé, le confort, la sécurité et la qualité de vie de ses occupants.",
+          "Vous apprenez à observer, repérer les risques, analyser et formuler des recommandations avec méthode et prudence, puis à introduire une harmonisation holistique de l'habitat.",
+          "Le parcours s'appuie sur un manuel de cours et un guide professionnel du praticien (identité du praticien, entretien, inspection, plan d'action, rapport, suivi et déontologie)."
+        ],
+        "modules": [
+          "Fondements de la médecine de l'habitat",
+          "Habitat sain : comprendre et repérer les risques",
+          "Confort et qualité de l'environnement intérieur",
+          "Écologie de l'habitat et pratiques durables",
+          "Méthodologie professionnelle d'observation et d'évaluation",
+          "Introduction à l'harmonisation holistique de l'habitat"
+        ],
+        "points": [
+          "Manuel de cours et guide du praticien",
+          "Études de cas, exercices pratiques et QCM de fin de module"
+        ]
+      }
+    },
+    {
+      "id": "energie-creatrice",
+      "titre": "L'énergie créatrice et l'art de la prospérité",
+      "categorie": "leadership",
+      "resume": "Formation sur l'énergie créatrice et la prospérité.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/energie-creatrice-prosperite.html",
+      "image": null,
+      "nouveau": true,
+      "fiche": {
+        "slug": "energie-creatrice-prosperite",
+        "unite": "Partie",
+        "intro": [
+          "Un parcours pour comprendre le mécanisme concret de la prospérité, le principe énergétique qui la sous-tend et le déclencheur de l'action, puis reprendre son pouvoir sur l'argent et guérir sa relation à l'argent.",
+          "Il s'adresse aux femmes comme aux hommes qui veulent développer leur puissance créatrice et leur autonomie, avec discernement : les idées proposées sont à questionner et à approfondir."
+        ],
+        "modules": [
+          "Le mécanisme concret",
+          "Le principe énergétique",
+          "Le déclencheur",
+          "Je reprends mon pouvoir sur l'argent",
+          "Guérir sa relation à l'argent"
+        ]
+      },
+      "modules": 5
+    },
+    {
+      "id": "mystere-sacre-des-epices",
+      "titre": "Le mystère sacré des épices",
+      "categorie": "cuisine",
+      "resume": "Épices et cuisine thérapeutique.",
+      "prix_fcfa": 150000,
+      "statut": "disponible",
+      "page": "../programmes/mystere-sacre-des-epices.html",
+      "image": "../assets/img/programmes/mystere-sacre-des-epices-hero"
+    },
+    {
+      "id": "art-de-la-paix",
+      "titre": "L'Art de la Paix",
+      "categorie": "leadership",
+      "resume": "Devenir ambassadeur de la paix et de la fraternité.",
+      "prix_fcfa": 150000,
+      "statut": "disponible",
+      "page": "../programmes/art-de-la-paix.html",
+      "image": "../assets/img/programmes/art-de-la-paix-hero",
+      "bestseller": true
+    },
+    {
+      "id": "art-de-limpact",
+      "titre": "L'Art de l'Impact",
+      "categorie": "leadership",
+      "resume": "Six principes pour un impact social véritable.",
+      "prix_fcfa": 150000,
+      "statut": "disponible",
+      "page": "../programmes/art-de-limpact.html",
+      "image": "../assets/img/programmes/art-de-limpact-hero",
+      "bestseller": true
+    },
+    {
+      "id": "profilage-criminel",
+      "titre": "Profilage criminel",
+      "categorie": "leadership",
+      "resume": "Comprendre les comportements pour mieux prévenir.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/profilage-criminel.html",
+      "image": "../assets/img/programmes/profilage-criminel-hero"
+    },
+    {
+      "id": "grounding",
+      "titre": "Grounding et respiration consciente",
+      "categorie": "arts-therapies",
+      "resume": "S'ancrer par la respiration et le corps.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/grounding-respiration-consciente.html",
+      "image": "../assets/img/programmes/grounding-hero"
+    },
+    {
+      "id": "chauffeur-eco",
+      "titre": "Chauffeur professionnel éco-responsable",
+      "categorie": "metiers-verts",
+      "resume": "Savoir-vivre et conduite responsable : guide formateur et livret.",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../programmes/chauffeur-eco-responsable.html",
+      "image": null,
+      "nouveau": true,
+      "modules": 8,
+      "couverture": "assets/img/formations/chauffeur-livret-couverture",
+      "fiche": {
+        "slug": "chauffeur-eco-responsable",
+        "intro": [
+          "Le parcours du chauffeur professionnel éco-responsable forme à une conduite et à un service de qualité : logistique verte, éco-conduite, entretien préventif, chargement et livraison, gestion des déchets, éthique professionnelle et sécurité routière.",
+          "Un livret de l'apprenant et un guide du formateur accompagnent la formation, avec des documents pratiques de fin de parcours : plan personnel de conduite éco-responsable, engagement du chauffeur, évaluation finale et repères pour la certification."
+        ],
+        "modules": [
+          "Comprendre la logistique verte",
+          "Éco-conduite et maîtrise du carburant",
+          "Entretien préventif du véhicule",
+          "Chargement, transport et livraison",
+          "Le chauffeur et la gestion responsable des déchets",
+          "Professionnalisme, éthique et image de BMT",
+          "Sécurité routière et situations à risque",
+          "Le chauffeur, acteur de la performance BMT"
+        ],
+        "points": [
+          "Livret de l'apprenant et guide du formateur",
+          "Plan personnel de conduite éco-responsable",
+          "Évaluation finale"
+        ]
+      }
+    },
+    {
+      "id": "sport-etudes",
+      "titre": "Sport-Études et Roll Ball",
+      "categorie": "inclusion",
+      "resume": "Programme sportif inclusif (FIRBALL).",
+      "prix_fcfa": null,
+      "statut": "disponible",
+      "page": "../inclusive/sport-etudes.html",
+      "image": null
+    },
+    {
+      "id": "sexotherapie",
+      "titre": "Sexothérapie",
+      "categorie": "relations",
+      "resume": "",
+      "prix_fcfa": 150000,
+      "statut": "masque",
+      "page": "../programmes/sexotherapie.html",
+      "image": null
+    }
   ]
 }
